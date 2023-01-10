@@ -1,0 +1,59 @@
+@import "./0_mediaquery";
+@import "./1_variables";
+
+.faqs{
+    .title{
+        text-align: center;
+        color: #74465c;
+        padding: 100px 0 15px 0;
+    }
+    .accordion{
+        display: block;
+        padding: 5px 8em 5px 8em;
+        .accordion-header{
+            display: grid;
+            align-items: center;
+            background: #F6F6F6;
+            padding: 10px;
+            box-shadow: 1px;
+            h4{
+                color: black;
+            }
+            i{
+                text-align: end;
+            }
+        }
+        .accordion-body{
+            border: 1px solid #ddd;
+            animation: 1000ms slide-down;
+
+            @keyframes slide-down {
+                from {
+                    margin-top: -1%;
+                }
+                to {
+                    margin-top: 0%;
+                }
+            }
+
+            p{
+                color: black;
+                padding: 1em 2em;
+            }
+            .date{
+                text-align: right;
+                padding: 1em;
+            }
+            .accordion-footer{
+                button{
+                    background-color: $primary;
+                    padding: 10px;
+                    color: white;
+                    border: $primary;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+}

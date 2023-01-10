@@ -1,0 +1,30 @@
+@import "./_1_variables";
+.AboutPrivacy {
+  font-family: montserrat;
+  padding-top: 100px;
+
+  .vision2030 {
+    max-width: 85%;
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    font-size: 18px;
+    
+    h1 {
+      padding: 1em 0 1em 0;
+      text-align: center;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(0deg, $accent 0%, $secondary 100%);
+    }
+
+    p {
+      font-family: "Monstserrat";
+      line-height: 1.5;
+      text-align: justify;
+      margin-bottom: 100px;
+    }
+  }
+
+
+}

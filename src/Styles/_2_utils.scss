@@ -1,0 +1,665 @@
+@import "../Styles/0_mediaquery";
+@import "../Styles/1_variables";
+
+.Utils {
+  .Navigation {
+    background-color: #425563;
+    height: 90vh;
+    width: fit-content;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    animation: 1000ms slide;
+
+    @keyframes slide {
+      from {
+        margin-left: -100%;
+      }
+      to {
+        margin-left: 0%;
+      }
+    }
+
+    .content {
+      background-color: rgba($color: $secondary, $alpha: 0.9);
+      height: 64px;
+      border: none;
+      display: flex;
+      align-items: center;
+      img {
+        max-height: 30px;
+        height: 100%;
+        padding: 0 0 0 1em;
+      }
+
+      h2 {
+        color: #ffff;
+        margin: 1em 0 1em 0;
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+
+      i {
+        color: white;
+        padding: 23px;
+        margin-left: auto;
+        cursor: pointer;
+      }
+      i:hover {
+        color: rgb(255, 0, 0);
+      }
+    }
+    .div1 {
+      border: none;
+      .NavLink {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+        padding: 5px 2em 5px 1em;
+        cursor: pointer;
+        height: 100%;
+
+        img {
+          height: 18px;
+          width: 24px;
+          object-fit: contain;
+        }
+
+        p {
+          color: white;
+          font-size: 10pt;
+        }
+      }
+
+      .NavGroup {
+        padding: 1em 1em 0 1em;
+
+        .item {
+          color: white;
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 10px;
+          cursor: pointer;
+
+          h3 {
+            font-weight: 200;
+            font-size: 10pt;
+          }
+        }
+      }
+    }
+
+    .div2 {
+      margin: 10em 1em 5px auto;
+
+      .logout {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+        color: $accent;
+        margin: 5px 1em 5px auto;
+        cursor: pointer;
+
+        img {
+          height: 24px;
+          width: 24px;
+        }
+      }
+
+      p {
+        color: white;
+        text-align: center;
+        padding: 1em;
+        font-size: 10pt;
+        margin: 5em 1em 5px auto;
+      }
+
+      a {
+        color: $green;
+        text-decoration: none;
+      }
+    }
+
+    @include maxwidth(mobile) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10000;
+      background-color: rgba($color: $secondary, $alpha: 1);
+    }
+    @include maxwidth(tablet) {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10000;
+      background-color: rgba($color: $secondary, $alpha: 1);
+    }
+  }
+  .hideNav {
+    width: fit-content;
+    height: fit-content;
+    background-color: $primary;
+    display: flex;
+    align-items: center;
+    height: 64px;
+
+    i {
+      color: #ffff;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    i:hover {
+      color: $accent;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .map {
+    box-shadow: 2px 2px 5px #60606040;
+
+    .Analysis {
+      display: grid;
+      grid-template-rows: repeat(4, auto);
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      background-color: rgba($color: white, $alpha: 0.9);
+      left: 0;
+      top: 2.5vh;
+      height: 70vh;
+      z-index: 9999;
+
+      h4 {
+        color: $primary;
+        font-weight: 400;
+        height: fit-content;
+        text-align: center;
+        line-height: 24px;
+        padding: 1em 5px 1em 5px;
+        writing-mode: vertical-rl;
+        cursor: pointer;
+      }
+
+      h4:hover {
+        color: $dark;
+      }
+    }
+
+    .Popup {
+      position: absolute;
+      left: 34px;
+      top: 2.5vh;
+      height: 70vh;
+      z-index: 99999;
+      width: 35vw;
+      background-color: rgba($color: white, $alpha: 0.8);
+      border-radius: 0 8px 8px 0;
+      padding: 10px;
+      overflow: hidden;
+
+      .piechart {
+        margin: auto;
+        overflow-y: auto;
+        width: fit-content !important;
+      }
+
+      .layers {
+        min-height: 20vh;
+        padding: 1em;
+      }
+
+      p {
+        text-align: center;
+        font-size: 10pt;
+        padding: 0 0 5px 0;
+        color: $primary;
+      }
+
+      h5 {
+        color: $dark;
+        padding: 10px 0 5px 0;
+      }
+
+      i {
+        color: $dark;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        cursor: pointer;
+      }
+      i:hover {
+        color: $accent;
+      }
+
+      .list {
+        overflow-y: auto;
+        max-height: 35vh;
+      }
+
+      .lyr {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 8px;
+        color: $dark;
+        margin: 8px 0 8px 0;
+
+        input {
+          height: 16px;
+          width: 16px;
+          margin: 4px 0 4px 0;
+        }
+
+        .div {
+          height: 24px;
+          width: 24px;
+          background-color: gray;
+          cursor: pointer;
+          border-radius: 3px;
+          border: none;
+          outline: none;
+        }
+
+        p {
+          line-height: 24px;
+          color: $dark;
+          text-align: left !important;
+          text-transform: capitalize;
+        }
+      }
+
+      .classes {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        gap: 8px;
+        color: $dark;
+        margin: 4px 0 4px 1.5em;
+
+        .cb {
+          height: 16px;
+          width: 16px;
+          margin: 4px 0 4px 0;
+        }
+
+        .cr {
+          height: 24px;
+          width: 24px;
+          cursor: pointer;
+          border-radius: 3px;
+          border: none;
+          outline: none;
+        }
+
+        p {
+          line-height: 24px;
+          color: $dark;
+          text-align: left !important;
+          text-transform: capitalize;
+        }
+      }
+      .range {
+        display: grid;
+        grid-template-columns: auto auto 1fr 1fr 1fr;
+        gap: 8px;
+        color: $dark;
+        margin: 4px 0 4px 1.5em;
+
+        i {
+          height: 16px;
+          width: 16px;
+          margin: 4px 0 4px 0;
+        }
+
+        .cr {
+          height: 24px !important;
+          width: 24px !important;
+          cursor: pointer;
+          border-radius: 3px;
+          border: none;
+          outline: none;
+        }
+
+        p {
+          line-height: 24px;
+          color: $dark;
+          text-align: left !important;
+          text-transform: capitalize;
+        }
+
+        input {
+          width: 100% !important;
+        }
+      }
+    }
+
+    .BottomPanel {
+      position: absolute;
+      left: 30%;
+      right: 30%;
+      bottom: 50px;
+      height: fit-content;
+      z-index: 9999;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: rgba($color: $accent, $alpha: 0.4);
+
+      h4 {
+        color: $primary;
+        font-weight: 400 !important;
+        height: fit-content;
+        text-align: center;
+        line-height: 24px;
+        cursor: pointer;
+      }
+
+      h4:hover {
+        color: white !important;
+        background-color: $accent;
+        border-radius: 5px;
+      }
+    }
+
+    .deco {
+      position: absolute;
+      left: 30%;
+      right: 30%;
+      bottom: 30px;
+      height: fit-content;
+      z-index: 9999;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      i {
+        color: $primary;
+        display: block;
+        margin: auto;
+        padding: 0 !important;
+      }
+    }
+
+    .BottomPanelPopup {
+      position: absolute;
+      left: 30%;
+      right: 30%;
+      bottom: 74px;
+      height: fit-content;
+      z-index: 9999;
+      background-color: rgba($color: white, $alpha: 0.9);
+      min-height: 40vh;
+      max-height: 65vh;
+      border-radius: 8px 8px 0 0;
+      padding: 10px 1em 10px 1em;
+
+      p {
+        text-align: center;
+        font-size: 10pt;
+        padding: 0 0 5px 0;
+      }
+
+      i {
+        color: $dark;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        cursor: pointer;
+      }
+      i:hover {
+        color: $accent;
+      }
+
+      .items {
+        width: 100%;
+
+        .aoi {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 10px;
+
+          p {
+            line-height: 44px;
+            text-align: left !important;
+          }
+        }
+        h3 {
+          text-align: center;
+          padding: 8px;
+          color: $primary;
+          width: 100%;
+        }
+
+        h4 {
+          font-size: 10pt;
+          text-align: center;
+          padding: 10px 0 10px 0;
+        }
+
+        img {
+          height: 44px;
+          width: 44px;
+          object-fit: contain;
+        }
+
+        .imgSelected {
+          border: 2px solid $primary;
+        }
+
+        .list {
+          padding: 1em;
+        }
+
+        .item {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 10px;
+          color: $dark;
+          margin: 16px 0 16px 0;
+        }
+      }
+    }
+
+    .qimg {
+      height: 64px;
+      width: 64px;
+      position: absolute;
+      bottom: -32px;
+      left: 49.5%;
+      z-index: 9999;
+    }
+
+    .items {
+      width: 100%;
+
+      .exp {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        width: 100%;
+
+        img {
+          height: 24px;
+          width: 24px;
+          object-fit: contain;
+        }
+
+        p {
+          line-height: 24px;
+          text-align: left !important;
+        }
+      }
+      h3 {
+        text-align: center;
+        padding: 8px;
+        color: $primary;
+        width: 100%;
+      }
+
+      h4 {
+        font-size: 10pt;
+        text-align: center;
+        padding: 10px 0 10px 0;
+      }
+
+      img {
+        height: 44px;
+        width: 44px;
+        object-fit: contain;
+      }
+
+      .imgSelected {
+        border: 2px solid $primary;
+      }
+
+      .list {
+        padding: 1em;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        color: $dark;
+        margin: 16px 0 16px 0;
+      }
+    }
+  }
+
+  .select {
+    max-width: 200px;
+    width: 100%;
+    margin: 5px auto 5px auto;
+
+    label {
+      display: block;
+    }
+
+    select {
+      width: 100%;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #60606040;
+      padding: 8px;
+      background-color: transparent;
+      color: $dark;
+    }
+  }
+
+  .selector {
+    background-color: $bg2;
+    padding: 1em 0 1em 0;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+
+    .thisSelector {
+      display: block;
+      margin: auto;
+      width: 25%;
+      border: none;
+      outline: none;
+      background: $bg2;
+      color: $dark;
+    }
+  }
+
+  .input {
+    max-width: 200px;
+    width: 100%;
+    margin: 5px auto 5px auto;
+
+    label {
+      display: block;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    input {
+      width: 100%;
+      outline: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #60606040;
+      padding: 8px;
+      background-color: transparent;
+      color: $dark;
+    }
+  }
+
+  .descriptionBox {
+    background-color: white;
+    //border: 1px solid black;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    box-shadow: 1px 1px 5px #60606030;
+    border-radius: 5px;
+
+    .text {
+      width: 90%;
+      margin: auto;
+      color: $dark;
+      padding-bottom: 0.4em;
+      padding-top: 0.3em;
+      h6 {
+        font-size: medium;
+        margin-bottom: 0.3em;
+      }
+    }
+  }
+}
+
+.buttonRegister {
+  max-width: 300px;
+  width: 30%;
+  margin: 10px auto 10px auto;
+
+  button {
+    border: none;
+    background-color: $primary;
+    color: white;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1em auto;
+  }
+
+  button:hover {
+    font-weight: 700;
+    color: $primary;
+    background-color: white;
+    border: 1px solid $primary;
+  }
+}
+
+.form {
+  width: 90%;
+  margin-top: 2em;
+  //margin-left: 10px;
+  //text-align: center;
+  input {
+    width: 95%;
+    margin-left: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    height: 2.5em;
+    border: 1px solid $dark;
+    border-radius: 5px;
+    text-indent: 20px;
+  }
+  label {
+    margin-left: 10px;
+    margin-top: 2em;
+    color: $dark;
+  }
+}
+
+button {
+  margin: 6px;
+}

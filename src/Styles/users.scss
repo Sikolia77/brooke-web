@@ -1,0 +1,191 @@
+@import "./0_mediaquery";
+@import "./1_variables";
+
+.UsersPage {
+  overflow-y: auto;
+  padding: 2em;
+
+  .bar {
+    background-color: $bg2;
+    padding: 1em 0 1em 0;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: auto;
+
+    h5 {
+      color: $dark;
+      font-size: large;
+      font-weight: bolder;
+    }
+  }
+
+  .usrStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3em;
+
+    .usrBox {
+      box-shadow: 1px 1px 5px #60606030;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 1em;
+      height: 200px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+
+      h4 {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #74465c;
+      }
+
+      p {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 250;
+        font-size: 36px;
+        line-height: 44px;
+        text-align: center;
+        color: #000000;
+        display: block;
+        margin: auto;
+      }
+
+      h6 {
+        font-family: "Montserrat";
+        font-style: italic;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: right;
+        color: #000000;
+      }
+    }
+
+    @include maxwidth(mobile) {
+      display: flex !important;
+      flex-direction: column;
+    }
+  }
+
+  .label {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: right;
+    color: #74465c;
+    margin: 1em 0 1em 0;
+  }
+
+  .table {
+    background-color: white;
+    padding: 1em 0 1em 0;
+
+    h5 {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 0 1em 10px 1em;
+      color: #000000;
+    }
+    .table {
+      width: 100%;
+
+      .tr {
+        display: grid;
+        grid-template-columns: 32px 1fr 1fr 0.5fr 0.7fr 0.7fr 0.5fr auto;
+        padding: 0 1em 0 1em;
+      }
+
+      .thead {
+        background-color: $bg2;
+        height: 2em;
+
+        h4 {
+          padding: 10px;
+          text-align: left;
+        }
+
+        .tr {
+          background-color: $bg2;
+        }
+      }
+      .tbody {
+        background-color: #ffffff;
+        position: relative;
+
+        .loading {
+          background-color: transparent !important;
+
+          .lds-roller div:after {
+            background: $primary !important;
+          }
+        }
+
+        p {
+          padding: 14px 10px 14px 10px;
+          text-align: left;
+          font-size: 12px;
+          line-height: 12px;
+          overflow: hidden;
+        }
+
+        .tr {
+          box-shadow: 1px 1px 5px #60606010;
+          margin-bottom: 3px;
+          cursor: pointer;
+          position: relative;
+
+          .active {
+            color: green;
+          }
+
+          .inactive {
+            color: orangered;
+          }
+
+          .options {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 9999;
+            box-shadow: 1px 1px 5px #60606050;
+            background-color: white;
+            padding: 10px 2em 10px 2em;
+            min-width: 150px;
+            border-radius: 5px;
+
+            p {
+              text-align: center;
+              padding: 10px 1em 10px 1em;
+              cursor: pointer;
+              color: $dark;
+            }
+            p:hover {
+              color: $accent;
+            }
+          }
+        }
+        .tr:hover {
+          box-shadow: 1px 1px 5px #60606050;
+        }
+      }
+    }
+  }
+  @include maxwidth(mobile) {
+    padding-bottom: 18% !important;
+    margin-left: -24px;
+  }
+  @include maxwidth(tablet) {
+    padding-bottom: 18% !important;
+    margin-left: -24px;
+  }
+}

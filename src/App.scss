@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&family=Montserrat:wght@200;400&family=Playfair+Display:ital,wght@0,400;0,800;1,400&display=swap");
+@import "./Styles/variables";
+@import "./Styles/0_mediaquery";
+@import "./Styles/header";
+@import "./Styles/footer";
+@import "./Styles/button.scss";
+@import "./Styles/InstancesPage";
+@import "./Styles/PublishedInstancesPage";
+@import "./Styles/SingleInstancePage";
+@import "./Styles/ContactUs.scss";
+@import "./Styles/Aboutpage.scss";
+@import "./Styles/faqs.scss";
+@import "./Styles/2_utils";
+@import "./Styles/users.scss";
+@import "./Styles/createuser.scss";
+@import "./Styles/DataPage.scss";
+@import "./Styles/lands.scss";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+input,
+a,
+textarea,
+button,
+li {
+  font-family: "Montserrat";
+}
+
+body {
+  width: 100% !important;
+  position: relative;
+  height: 100%;
+  // padding-top: 64px;
+}
+.err {
+  color: red;
+}
+
+.land {
+  width: 100vw;
+  height: 80vh;
+  background-image: url("./assets/imgs/landing.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.lan {
+  background-color: white;
+}
+
+.button {
+  width: 100%;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgba($color: $green, $alpha: 0.7);
+}
+
+.dataPage {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100vh;
+  width: 100vw;
+
+  .MainsContent {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+
+    .publications {
+      .title {
+        text-align: center;
+        color: #74465c;
+        //margin-bottom: 10px;
+        padding: 15px 0 15px 0;
+      }
+      .Publications {
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          thead {
+            th {
+              border: 1px solid #ddd;
+              padding: 8px;
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: $primary;
+              color: white;
+            }
+          }
+          tr {
+            font-size: 16px;
+            td {
+              text-align: center;
+              border: 1px solid #ddd;
+              padding: 8px;
+              width: 1px;
+              .icons {
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        table tr:nth-child(even) {
+          background-color: #ffffff;
+        }
+
+        table tr:hover {
+          background-color: #ddd;
+        }
+      }
+      .Publication {
+        text-align: center;
+        width: 80%;
+        margin: auto;
+        div {
+          margin: 0 0 25px 0;
+          display: grid;
+          grid-template-columns: 10fr 1fr;
+        }
+      }
+    }
+
+    .main {
+      color: white;
+      padding: 0 2em 0 2em;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      width: 100%;
+      background-color: $primary;
+
+      .fa-bars {
+        display: none;
+      }
+
+      h4 {
+        line-height: 64px;
+        font-weight: 400;
+        @include maxwidth(mobile) {
+          margin-left: 5px;
+        }
+      }
+
+      .user {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+        margin: 10px 0 10px 0;
+
+        img {
+          height: 44px;
+          width: 44px;
+          border-radius: 44px;
+          object-fit: cover;
+          object-position: center;
+        }
+
+        .dropdown {
+          h5 {
+            color: white;
+            cursor: pointer;
+            font-size: 10pt;
+            letter-spacing: 1px;
+            line-height: 44px;
+          }
+          span {
+            margin-left: 1em;
+          }
+        }
+        select {
+          background-color: transparent;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          outline: none;
+
+          option {
+            background-color: $primary;
+            padding: 1em;
+            cursor: pointer;
+          }
+        }
+      }
+      .userOptions {
+        position: absolute;
+        visibility: hidden;
+        background-color: $primary;
+        width: 130px;
+        color: white;
+
+        h5 {
+          line-height: 24px;
+          border-bottom: 1px solid gray;
+          padding-left: 5px;
+          cursor: pointer;
+        }
+        h5:hover {
+          background-color: whitesmoke;
+          color: #030092;
+        }
+      }
+      .showSettings {
+        visibility: visible;
+      }
+
+      @include maxwidth(mobile) {
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+.carousel {
+  height: 120px;
+  background-color: rgb(51, 51, 51);
+  width: 100%;
+
+  h1 {
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding-top: 30px;
+  }
+}
+
+.pagination {
+  margin: 2em 0 2em 0;
+
+  .container {
+    max-width: 85vw;
+    width: fit-content;
+    height: 24px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+
+    .fa {
+      height: 24px;
+      width: 24px;
+      font-size: medium;
+      line-height: 24px;
+      color: $secondary;
+      cursor: pointer;
+      display: block;
+      margin: 0 8px 0 8px;
+    }
+
+    .fa:hover {
+      color: $accent;
+    }
+
+    .pages {
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+
+      h5 {
+        width: 24px;
+        height: 24px;
+        color: $primary;
+        line-height: 24px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 2px;
+        font-size: small;
+        display: inline-block;
+      }
+    }
+
+    .page {
+      width: 24px;
+      height: 24px;
+      background-color: $secondary;
+      color: white;
+      line-height: 24px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: small;
+      display: inline-block;
+      margin: 0 8px 0 8px;
+    }
+
+    .page-active {
+      width: 24px;
+      height: 24px;
+      background-color: $primary;
+      color: white;
+      line-height: 24px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 3px;
+      font-size: small;
+      margin: 0 8px 0 8px;
+    }
+
+    .page:hover {
+      background-color: $secondary;
+    }
+
+    .active {
+      background-color: $dark;
+    }
+  }
+}
+
+.div2equal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.div3equal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
