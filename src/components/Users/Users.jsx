@@ -74,7 +74,7 @@ export default function Users(props) {
         <p className="label">0/0 Users</p>
       )}
       <div className="table">
-        <h5>Admin Portal Users</h5>
+        <h5>Brooke GIS Portal Administrators</h5>
         <div className="table">
           <div className="thead">
             <div className="tr">

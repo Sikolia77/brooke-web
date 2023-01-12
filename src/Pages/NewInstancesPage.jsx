@@ -19,26 +19,30 @@ export default function NewInstancesPage(props) {
 
   return (
     <div className="NewinstancesPage">
-      <Header active="Admin" />
-        <div className="newData">
-          <Navigation active="Publish Instance" />
-          <div className="dataSection">
-            {!type ? (
-              <>
-                <Options setType={setType} />
-              </>
-            ) : (
-              <>
-                {type === "Advocacy" && <Advocacy theme={type} />}
-                {type === "Community" && <CommunityEngagement theme={type} />}
-                {type === "Health" && <AnimalHealth theme={type} />}
-                {type === "Communication" && <Communication theme={type} />}
-                {type === "Topo Map" && <TopoMap theme={type} />}
-              </>
-            )}
-          </div>
+      <Header
+        isAuthenticated={props.isAuthenticated}
+        setIsAuthenticated={props.setIsAuthenticated}
+        currentUser={props.currentUser}
+        setCurrentUser={props.setCurrentUser}
+      />
+      <div className="newData">
+        <Navigation active="Publish Instance" />
+        <div className="dataSection">
+          {!type ? (
+            <>
+              <Options setType={setType} />
+            </>
+          ) : (
+            <>
+              {type === "Advocacy" && <Advocacy theme={type} />}
+              {type === "Community" && <CommunityEngagement theme={type} />}
+              {type === "Health" && <AnimalHealth theme={type} />}
+              {type === "Communication" && <Communication theme={type} />}
+              {type === "Topo Map" && <TopoMap theme={type} />}
+            </>
+          )}
         </div>
-      
+      </div>
     </div>
   );
 }

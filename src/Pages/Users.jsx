@@ -4,6 +4,7 @@ import Navigation from "../components/Utils/Navigation";
 import Users from "../components/Users/Users";
 import UsrStats from "../components/Users/UsrStats";
 import { useState } from "react";
+import Header from "../components/Utils/header";
 
 export default function UsersPage(props) {
   const [total, setTotal] = useState(0);
@@ -12,10 +13,10 @@ export default function UsersPage(props) {
   const [time, setTime] = useState("");
 
   return (
-    <div className="dataPage">
-      <Navigation active="Users" />
-      <div className="MainsContent">
-        <Header2 active="Private Users" />
+    <div className="users">
+      <Header active="Users" />
+      <div className="newusercontent">
+        <Navigation active="Users" />
         <div className="UsersPage">
           <UsrStats
             total={total}
