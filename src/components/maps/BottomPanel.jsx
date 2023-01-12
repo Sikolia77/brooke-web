@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Item from "./Item";
 import BuildQuery from "./BottomPanel/BuildQuery";
 import Search from "./BottomPanel/Search";
-import Print from "./BottomPanel/Print";
+// import Print from "./BottomPanel/Print";
 
 export default function BottomPanel(props) {
   const [show, setShow] = useState(false);
@@ -34,7 +34,7 @@ export default function BottomPanel(props) {
           {/* {showing === 3 && (
             <AOI body={props.body} updateBody={props.updateBody} />
           )} */}
-          {showing === 4 && (
+          {/* {showing === 4 && (
             <Print
               body={props.body}
               printMap={props.printMap}
@@ -45,7 +45,7 @@ export default function BottomPanel(props) {
               bChartImgUrl={props.bChartImgUrl}
               setBChartImgUrl={props.setBChartImgUrl}
             />
-          )}
+          )} */}
         </div>
       )}
 
