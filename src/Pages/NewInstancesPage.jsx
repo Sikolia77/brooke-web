@@ -18,26 +18,13 @@ export default function NewInstancesPage(props) {
   const [type, setType] = useState(null);
 
   return (
-    <div className="hello">
+    <div className="NewinstancesPage">
       <Header active="Admin" />
-      <div className="cont">
-        <div className="publishedData">
+        <div className="newData">
           <Navigation active="Publish Instance" />
-          <div className="NewInstancesPage">
+          <div className="dataSection">
             {!type ? (
               <>
-                <MapContainer
-                  style={{ width: "100%", height: "93vh" }}
-                  center={[-1.2921, 36.8219]}
-                  zoom={8}
-                  maxZoom={12}
-                  zoomControl={false}
-                >
-                  <TileLayer
-                    attribution={myData[0].attribution}
-                    url={myData[0].url}
-                  />
-                </MapContainer>
                 <Options setType={setType} />
               </>
             ) : (
@@ -51,7 +38,7 @@ export default function NewInstancesPage(props) {
             )}
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }

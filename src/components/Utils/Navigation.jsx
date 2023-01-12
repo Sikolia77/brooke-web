@@ -106,12 +106,14 @@ export default function Navigation(props) {
                 <img src={logout} alt="" />
                 <h4>Logout</h4>
               </div>
-              <p>
-                Powered by <br></br>
-                <a href="https://www.neatline.co.ke/" target="_blank">
-                  Neatline Consultancy.
-                </a>
-              </p>
+              <div>
+                <p>
+                  Powered by <br></br>
+                  <a href="https://www.neatline.co.ke/" target="_blank">
+                    Neatline Geoservices.
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </>

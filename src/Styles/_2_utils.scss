@@ -4,7 +4,7 @@
 .Utils {
   .Navigation {
     background-color: #425563;
-    height: 90vh;
+    height: fit-content;
     width: fit-content;
     display: grid;
     grid-template-rows: auto 1fr;
@@ -16,36 +16,6 @@
       }
       to {
         margin-left: 0%;
-      }
-    }
-
-    .content {
-      background-color: rgba($color: $secondary, $alpha: 0.9);
-      height: 64px;
-      border: none;
-      display: flex;
-      align-items: center;
-      img {
-        max-height: 30px;
-        height: 100%;
-        padding: 0 0 0 1em;
-      }
-
-      h2 {
-        color: #ffff;
-        margin: 1em 0 1em 0;
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
-
-      i {
-        color: white;
-        padding: 23px;
-        margin-left: auto;
-        cursor: pointer;
-      }
-      i:hover {
-        color: rgb(255, 0, 0);
       }
     }
     .div1 {
@@ -89,7 +59,7 @@
     }
 
     .div2 {
-      margin: 10em 1em 5px auto;
+      margin: 2em 1em 5px auto;
 
       .logout {
         width: fit-content;
