@@ -73,6 +73,12 @@ export default function Landing(props) {
             <div className="depts">
               <DataLink txt="Animal Health" url="/category/Health" />
             </div>
+            <div className="depts">
+              <DataLink txt="Communication" url="/category/Communication" />
+            </div>
+            <div className="depts">
+              <DataLink txt="Partners" url="/category/Partners" />
+            </div>
           </div>
         </div>
       </div>

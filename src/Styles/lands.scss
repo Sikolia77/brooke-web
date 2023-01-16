@@ -229,15 +229,19 @@
 
     .wrap {
       max-width: 60vw;
-      width: 100%;
+      width: 50vw;
       height: fit-content;
       margin: auto;
       border-radius: 16px;
       overflow: hidden;
-
       background-color: rgba($color: #fffafa, $alpha: 0.5);
       text-align: center;
       color: whitesmoke;
+
+      .top {
+        padding: 2em 0 2em 0;
+        color: #fe5000;
+      }
 
       .about {
         width: 80%;
@@ -253,29 +257,24 @@
         }
       }
 
-      .top {
-        padding: 2em 0 2em 0;
-        color: #fe5000;
-      }
       .icons {
         padding: 2em 0 2em 0;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(5, auto);
         grid-gap: 1em;
         width: 80%;
         margin: auto;
         color: #030092;
 
-        .depts{
+        .depts {
           box-shadow: 1px 1px 5px #606060;
           background-color: rgba($color: wheat, $alpha: 0.5);
         }
 
-        .depts:hover{
+        .depts:hover {
           cursor: pointer;
           background-color: white;
         }
-        
 
         h5 {
           box-shadow: 0 0 20px #eee;

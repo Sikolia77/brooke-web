@@ -9,7 +9,6 @@ import "./App.scss";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import NotFound from "./Pages/404";
-import LandingPage from "./Pages/LandingNew";
 import Landing from "./Pages/Landing";
 import Map from "./Pages/Map";
 import NewMap from "./Pages/NewMap";
@@ -136,14 +135,6 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
-        {/* <Route exact path="/landing">
-          <Landing
-            isAuthenticated={isAuthenticated}
-            setIsAuthenticated={setIsAuthenticated}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-        </Route> */}
 
         <Route exact path="/loginpage">
           <LoginPage
