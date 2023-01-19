@@ -148,7 +148,6 @@ export default function Header(props) {
             className="logo"
           >
             <img src={logo} className="lg" alt="Brooke E.A Logo" />
-            <h2>Brooke East Africa GIS Portal</h2>
           </div>
 
           <div className="nav">

@@ -1,0 +1,59 @@
+@import "../Styles/0_mediaquery";
+@import "../Styles/1_variables";
+@import "../Styles/variables";
+
+.landingnew {
+  font-family: "Montserrat";
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+
+  .headertop{
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    .brookelogo{}
+  }
+
+
+  .lcontainer {
+    background-color: #e8ecf4;
+    .wrap {
+      .top {
+        text-align: center;
+        color: $accent;
+        margin: 2em;
+      }
+
+      .about {
+        text-align: center;
+        margin: 2em;
+        line-height: 1.8;
+      }
+
+      .icons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5em;
+        text-align: center;
+
+        .depts {
+          box-shadow: 1px 1px 5px white;
+          background-color: white;
+          text-align: center;
+          width: 100%;
+          text-transform: uppercase;
+          font-size: small;
+          height: 10vh;
+          margin: auto;
+          font-weight: bold;
+        }
+
+        .depts:hover {
+          cursor: pointer;
+          color: orangered;
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import "../Styles/lands.scss";
+import "../Styles/home.scss";
 import React, { useState } from "react";
 import Header from "../components/Utils/header";
 import "leaflet/dist/leaflet.css";
@@ -50,7 +50,7 @@ export default function Landing(props) {
       <div className="lcontainer">
         <div className="wrap">
           <div className="top">
-            <h1>Brooke East Africa GIS Portal</h1>
+            <h1>BROOKE EAST AFRICA GIS PORTAL</h1>
           </div>
           <div className="about">
             <p>
@@ -58,7 +58,7 @@ export default function Landing(props) {
               that protects and improves the lives of working equines, which
               promote equine centric thriving communities and systems
             </p>
-            <ButtonMain label="View Data" handleClick={showData} />
+            {/* <ButtonMain label="View Data" handleClick={showData} /> */}
           </div>
           <div className="icons">
             <div className="depts">
