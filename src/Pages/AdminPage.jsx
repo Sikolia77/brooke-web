@@ -91,13 +91,13 @@ export default function AdminPagePage(props) {
           setCurrentUser={props.setCurrentUser}
         />
         <div className="publishedData">
-          <Navigation active="Published Instances" />
+          <Navigation active="Summary" />
           <div className="MainsContent">
             <div className="InstancesPage">
               <UsrStats stats={stats} time={time} />
               {categories &&
                 categories.map((item, index) => {
-                  return <MapCategory key={index} />;
+                  return <MapCategory key={index} category={item.Category} />;
                 })}
             </div>
           </div>
