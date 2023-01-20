@@ -33,10 +33,10 @@ export default function Options(props) {
         </h4>
         <h4
           onClick={() => {
-            props.setType("Topo Map");
+            props.setType("Partners");
           }}
         >
-          <i className="fa fa-map"></i>Topo Map
+          <i className="fa fa-map"></i>Partners
         </h4>
       </div>
     </div>

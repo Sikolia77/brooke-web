@@ -13,6 +13,7 @@ import BaseMap from "../components/BaseMap/BaseMap";
 import TopoMap from "../components/TopoMap/TopoMap";
 import Header from "../components/Utils/header";
 import Communication from "../components/Communication/Communication";
+import Partners from "../components/Partners/Partners";
 
 export default function NewInstancesPage(props) {
   const [type, setType] = useState(null);
@@ -26,7 +27,7 @@ export default function NewInstancesPage(props) {
         setCurrentUser={props.setCurrentUser}
       />
       <div className="newData">
-        <Navigation active="Publish Instance" />
+        <Navigation active="Add Data" />
         <div className="dataSection">
           {!type ? (
             <>
@@ -38,7 +39,7 @@ export default function NewInstancesPage(props) {
               {type === "Community" && <CommunityEngagement theme={type} />}
               {type === "Health" && <AnimalHealth theme={type} />}
               {type === "Communication" && <Communication theme={type} />}
-              {type === "Topo Map" && <TopoMap theme={type} />}
+              {type === "Partners" && <Partners theme={type} />}
             </>
           )}
         </div>
