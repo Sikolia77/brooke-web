@@ -43,13 +43,11 @@ export default function AdminPagePage(props) {
   }, [isAuthenticated]);
 
   useEffect(() => {
-    console.log("res");
     fetch("/api/gis/category", {
       method: "get",
       credentials: "include",
     })
       .then((res) => {
-        console.log(res);
         if (res.ok) return res.json();
         else throw Error("");
       })
@@ -99,7 +97,7 @@ export default function AdminPagePage(props) {
               <UsrStats stats={stats} time={time} />
               {categories &&
                 categories.map((item, index) => {
-                  return <MapCategory key={index} category={item.Category} />;
+                  return <MapCategory key={index} />;
                 })}
             </div>
           </div>

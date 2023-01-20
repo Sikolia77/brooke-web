@@ -23,6 +23,10 @@ import NewUser from "./Pages/NewUser";
 import LoginPage from "./Pages/LoginPage";
 import LoginPopUp from "./components/Utils/loginPopUp";
 import Advocacy from "./components/PublishedInstances/Advocacy";
+import CommunityEngagement from "./components/PublishedInstances/CommunityEngagement";
+import AnimalHealth from "./components/PublishedInstances/AnimalHealth";
+import Partners from "./components/PublishedInstances/Partners";
+import Communication from "./components/PublishedInstances/Communication";
 
 function App() {
   useEffect(() => {
@@ -224,6 +228,38 @@ function App() {
         </Route>
         <Route exact path="/advocacy">
           <Advocacy
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/communityengagement">
+          <CommunityEngagement
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/animalhealth">
+          <AnimalHealth
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/partners">
+          <Partners
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/communication">
+          <Communication
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}

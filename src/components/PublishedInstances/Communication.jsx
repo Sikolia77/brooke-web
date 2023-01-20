@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import Header from "../../components/Utils/header";
-import Navigation from "../../components/Utils/Navigation";
+import Header from "../Utils/header";
+import Navigation from "../Utils/Navigation";
 import MapCategory from "../maps/MapCategory";
 
-export default function Advocacy(props) {
+export default function Communication(props) {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [currentUser, setCurrentUser] = useState();
   const [categories, setCategories] = useState(null);
@@ -50,10 +50,10 @@ export default function Advocacy(props) {
           setCurrentUser={props.setCurrentUser}
         />
         <div className="publishedData">
-          <Navigation active="Advocacy and Innovation" />
+          <Navigation active="Communication" />
           <div className="MainsContent">
             <div className="InstancesPage">
-              <MapCategory category="Advocacy" />;
+              <MapCategory category="Communication" />;
             </div>
           </div>
         </div>

@@ -53,26 +53,26 @@ export default function Navigation(props) {
                 />
                 <NavLink
                   active={props.active}
-                  url="/category/advocacy"
-                  txt="Advocay and Innovation"
+                  url="/advocacy"
+                  txt="Advocacy and Innovation"
                   category={props.category}
                 />
                 <NavLink
                   active={props.active}
-                  url="/admin"
+                  url="/communityengagement"
                   txt="Community Engagement"
                 />
                 <NavLink
                   active={props.active}
-                  url="/admin"
+                  url="/animalhealth"
                   txt="Animal Health"
                 />
                 <NavLink
                   active={props.active}
-                  url="/admin"
+                  url="/communication"
                   txt="Communication"
                 />
-                <NavLink active={props.active} url="/admin" txt="Partners" />
+                <NavLink active={props.active} url="/partners" txt="Partners" />
                 <>
                   <NavLink
                     active={props.active}
