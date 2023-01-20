@@ -60,6 +60,7 @@ export default function ChangePassword(props) {
                 }
               })
               .catch((err) => {
+                console.log(err)
                 setIsLoading(false);
                 setIsError("Could not Change password!");
               });

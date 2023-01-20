@@ -87,8 +87,8 @@ export default function AdminPagePage(props) {
           active="Admin"
           isAuthenticated={props.isAuthenticated}
           setIsAuthenticated={props.setIsAuthenticated}
-          currentUser={props.currentUser}
-          setCurrentUser={props.setCurrentUser}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
         />
         <div className="publishedData">
           <Navigation active="Summary" />
