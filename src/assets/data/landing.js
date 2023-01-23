@@ -87,6 +87,34 @@ const myData = [
       { image: rs4, txt: "Animal Health Facilities" },
     ],
   },
+  {
+    title: "Brooke East Africa GIS Portal",
+    subtitle: "Communication",
+    cat: "Communication",
+    p: `These types of map characterized by large-scale detail and quantitative representation of landmark features.`,
+    label: "View Sample Maps",
+    imgs: [
+      { image: tp1, txt: "CBOs & Groups" },
+      { image: tp2, txt: "CAWAs" },
+      { image: tp3, txt: "Care Clubs" },
+      { image: tp4, txt: "Livelihoods" },
+      { image: tp4, txt: "Slaughter Houses" },
+    ],
+  },
+  {
+    title: "Brooke East Africa GIS Portal",
+    subtitle: "Partners",
+    cat: "Partners",
+    p: `Earth observation involves gathering information about the Earth through remote sensing technologies`,
+    label: "View/Download Data",
+    imgs: [
+      { image: rs1, txt: "Farriers" },
+      { image: rs2, txt: "AHPs" },
+      { image: rs3, txt: "Agrovets" },
+      { image: rs4, txt: "Vet Institutions" },
+      { image: rs4, txt: "Animal Health Facilities" },
+    ],
+  },
 ];
 
 const categoriesData = [
@@ -104,7 +132,7 @@ const categoriesData = [
     description:
       "A topographic map a type of map characterized by large-scale detail and quantitative representation of relief features, usually using contour lines, but historically using a variety of methods.",
     image: topoMap,
-    link: "/category/Animal Health",
+    link: "/category/Health",
   },
   {
     title: "Community Engagement",
@@ -113,6 +141,22 @@ const categoriesData = [
       "Earth observation is the gathering of information about planet Earth's physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices.",
     image: rasterMap,
     link: "/category/Community Engagement",
+  },
+  {
+    title: "Communication",
+    subTitle: "Communication",
+    description:
+      "A topographic map a type of map characterized by large-scale detail and quantitative representation of relief features, usually using contour lines, but historically using a variety of methods.",
+    image: topoMap,
+    link: "/category/Communication",
+  },
+  {
+    title: "Partners",
+    subTitle: "Partners",
+    description:
+      "Earth observation is the gathering of information about planet Earth's physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices.",
+    image: rasterMap,
+    link: "/category/Partners",
   },
 ];
 

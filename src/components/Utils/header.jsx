@@ -70,6 +70,7 @@ export default function Header(props) {
       .then((data) => {
         localStorage.clear();
         props.setIsAuthenticated(false);
+        window.location.href = "/";
         props.setCurrentUser(null);
       })
       .catch((err) => {
@@ -100,18 +101,11 @@ export default function Header(props) {
   }
 
   return (
-    <div>
+    <div className="pop">
       {toggleLogin && (
         <Login
           setToggleLogin={setToggleLogin}
           setToggleRegister={setToggleRegister}
-          setIsAuthenticated={props.setIsAuthenticated}
-        />
-      )}
-      {toggleRegister && (
-        <RegisterPopUp
-          setToggleRegister={setToggleRegister}
-          setToggleLogin={setToggleLogin}
           setIsAuthenticated={props.setIsAuthenticated}
         />
       )}

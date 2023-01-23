@@ -2,6 +2,9 @@
 @import "../Styles/1_variables";
 @import "../Styles/variables";
 
+.pop {
+  z-index: 9999;
+}
 .landingnew {
   font-family: "Montserrat";
   //background-image: url("../assets/imgs/donkey2.jpg");

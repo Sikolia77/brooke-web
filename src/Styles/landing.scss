@@ -2,6 +2,9 @@
 @import "../Styles/1_variables";
 @import "../Styles/variables";
 
+.pop {
+  z-index: 999;
+}
 .landingnew {
   //background-image: url("../assets/imgs/donkey.png");
   height: 100vh;

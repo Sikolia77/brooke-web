@@ -1,4 +1,10 @@
 @import "./_1_variables";
+
+.pop{
+  z-index: 9999;
+  display: flex;
+}
+
 .header {
   padding-top: 8px;
   padding-bottom: 8px;

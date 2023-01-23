@@ -2,19 +2,22 @@
 @import "../Styles/1_variables";
 @import "../Styles/variables";
 
+.pop {
+  z-index: 999;
+}
 .landingnew {
   font-family: "Montserrat";
   height: 100vh;
   width: 100vw;
   background-color: white;
 
-  .headertop{
+  .headertop {
     display: grid;
     grid-template-columns: auto 1fr;
 
-    .brookelogo{}
+    .brookelogo {
+    }
   }
-
 
   .lcontainer {
     background-color: #e8ecf4;

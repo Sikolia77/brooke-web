@@ -85,7 +85,7 @@ export default function ForgotPassword(props) {
         <h6
           className="cancel"
           onClick={() => {
-            setForgot(false);
+            props.setForgot(false);
           }}
         >
           Cancel

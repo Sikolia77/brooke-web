@@ -109,21 +109,10 @@ export default function LoginPopUp(props) {
             </p>
             <Button label="Submit" handleClick={loginUser} />
           </form>
-          <p>
-            Don't have an account?{" "}
-            <span
-              onClick={() => {
-                props.setToggleLogin(false);
-                props.setToggleRegister(true);
-              }}
-            >
-              Register here
-            </span>
-          </p>
+
           <h4
             onClick={() => {
               props.setToggleLogin(false);
-              props.setToggleRegister(false);
             }}
           >
             Cancel

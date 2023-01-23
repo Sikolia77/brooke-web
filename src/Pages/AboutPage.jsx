@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Utils/header";
 import about1Background from "../assets/imgs/about_1_background.jpg";
-import about2Background from "../assets/imgs/donkey.png";
+import about2Background from "../assets/imgs/about.jpg";
 
 export default function AboutPage(props) {
   return (
