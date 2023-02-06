@@ -19,6 +19,12 @@ export default function MapCategory(props) {
     case "Community":
       prg = myData[3].p;
       break;
+    case "Partners":
+      prg = myData[4].p;
+      break;
+    case "Communication":
+      prg = myData[5].p;
+      break;
     default:
       break;
   }
@@ -30,6 +36,7 @@ export default function MapCategory(props) {
         else throw Error("");
       })
       .then((data) => {
+        console.log(data)
         setData(data);
       })
       .catch((e) => {});

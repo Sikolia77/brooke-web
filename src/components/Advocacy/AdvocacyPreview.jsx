@@ -5,9 +5,6 @@ import {
   MapConsumer,
   LayersControl,
   FeatureGroup,
-  Circle,
-  Polygon,
-  Marker,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
 import SidePanel from "../maps/SidePanel";
@@ -15,7 +12,7 @@ import FileSaver from "file-saver";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
-import AlertMsg from "../maps/AlertMsg";
+import AlertMsg from ".";
 import BottomPanel from "../maps/BottomPanel";
 import $ from "jquery";
 import bbox from "@turf/bbox";
@@ -24,7 +21,6 @@ import "leaflet";
 import "leaflet-simple-map-screenshoter";
 import PreviewData from "../maps/PreviewData";
 import { EditControl } from "react-leaflet-draw";
-import { ScaleControl } from "react-leaflet";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -33,13 +29,12 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
-export default function AdvocacyPreview(props) {
+export default function ThematicPreview(props) {
   let template = {
     data: {
       url: null,
       layer: null,
       basemap: 0,
-      filters: null,
     },
     style: {
       column: null,
@@ -63,23 +58,22 @@ export default function AdvocacyPreview(props) {
   const [msg, setMsg] = useState(null);
   const [data, setData] = useState(null);
   const [myMap, setMyMap] = useState(null);
-  const [polygon, setPolygon] = useState([]);
-  const [simpleMapScreenshoter, setSimpleScreenShooter] = useState(null);
+  const [simpleMapScreenshoter, setSimpleScreenShooter] = useState();
   const pathname = window.location.pathname.split("/")[5];
-  const { BaseLayer, Overlay } = LayersControl;
+  const Overlay = LayersControl;
   const [extent, setExtent] = useState(null);
   const [bounds, setBounds] = useState(null);
-  const [title, setTitle] = useState();
   const [pChartImgUrl, setPChartImgUrl] = useState();
   const [bChartImgUrl, setBChartImgUrl] = useState();
+  const [title, setTitle] = useState();
 
   useEffect(() => {
     if (extent) {
       let d = body;
-      d.data.filters = `CQL_FILTER=INTERSECTS(geom, POLYGON((${extent})))`;
+      d.data.filters = `CQL_FILTER=INTERSECTS(the_geom, POLYGON((${extent})))`;
       updateBody(d);
     }
-  }, [extent]);
+  }, [bounds]);
 
   const polygonCreated = (layer) => {
     let b = [];
@@ -114,8 +108,7 @@ export default function AdvocacyPreview(props) {
       credentials: "include",
     })
       .then((res) => {
-        if (res.ok) return res.json();
-        else throw "Error";
+        return res.json();
       })
       .then((data) => {
         let d = body;
@@ -170,10 +163,8 @@ export default function AdvocacyPreview(props) {
       setSimpleScreenShooter(
         L.simpleMapScreenshoter(pluginOptions).addTo(myMap)
       );
-
-      setPChartImgUrl("/");
     }
-  }, [bounds]);
+  }, [myMap]);
 
   useEffect(() => {
     if (body.data.url) {
@@ -188,7 +179,7 @@ export default function AdvocacyPreview(props) {
         },
       });
       $.when(response).done(function (data) {
-        if (data.features.length != 0) {
+        if (data.features.length !== 0) {
           const bbx = bbox(response.responseJSON);
           const c1 = [bbx[1], bbx[0]];
           const c2 = [bbx[3], bbx[2]];
@@ -223,7 +214,7 @@ export default function AdvocacyPreview(props) {
             return e.name;
           })
           .indexOf(feature.properties[body.style.column]);
-        if (pos != -1) {
+        if (pos !== -1) {
           style = {
             fillColor: body.style.classes[pos].color,
             fillOpacity: 0.8,
@@ -268,7 +259,7 @@ export default function AdvocacyPreview(props) {
   };
 
   const updateBody = (bd) => {
-    if (body.data.basemap != bd.data.basemap) {
+    if (body.data.basemap !== bd.data.basemap) {
       let d = bd;
       d.data.basemap = null;
       setBody({ ...body, d });
@@ -282,7 +273,7 @@ export default function AdvocacyPreview(props) {
       mimeType: "image/jpeg",
     };
     simpleMapScreenshoter
-      .takeScreen(format, overridedPluginOptions)
+      ?.takeScreen(format, overridedPluginOptions)
       .then((blob) => {
         FileSaver.saveAs(blob, "map.png");
       })
@@ -293,10 +284,10 @@ export default function AdvocacyPreview(props) {
     <div>
       <div className="map">
         <MapContainer
-          style={{ width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "80vh" }}
           center={[-1.2921, 36.8219]}
           zoom={12}
-          maxZoom={30}
+          maxZoom={18}
           zoomControl={false}
         >
           <LayersControl>
@@ -337,13 +328,8 @@ export default function AdvocacyPreview(props) {
 
           <MapConsumer>
             {(map) => {
-              if (bounds) {
-                setBounds(bounds);
-                bounds && map.fitBounds(bounds);
-              }
               if (body.data.bounds) {
-                setBounds(body.data.bounds);
-                bounds && map.fitBounds(bounds);
+                map.fitBounds(body.data.bounds);
               }
               if (!myMap) setMyMap(map);
 
@@ -351,11 +337,10 @@ export default function AdvocacyPreview(props) {
             }}
           </MapConsumer>
           <ZoomControl position="bottomright" />
-          <ScaleControl position="bottomleft" />
         </MapContainer>
 
         <SidePanel
-          update={true}
+          update={false}
           body={body}
           updateBody={updateBody}
           instanceId={props.instanceId}
