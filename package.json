@@ -2,7 +2,7 @@
   "name": "mfp-frnt",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3002",
+  "proxy": "http://194.163.165.107:4001",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@react-pdf/renderer": "^2.3.0",

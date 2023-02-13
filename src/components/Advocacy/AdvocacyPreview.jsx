@@ -12,7 +12,7 @@ import FileSaver from "file-saver";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import L from "leaflet";
-import AlertMsg from ".";
+import AlertMsg from "../maps/AlertMsg";
 import BottomPanel from "../maps/BottomPanel";
 import $ from "jquery";
 import bbox from "@turf/bbox";
