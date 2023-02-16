@@ -27,6 +27,7 @@ import CommunityEngagement from "./components/PublishedInstances/CommunityEngage
 import AnimalHealth from "./components/PublishedInstances/AnimalHealth";
 import Partners from "./components/PublishedInstances/Partners";
 import Communication from "./components/PublishedInstances/Communication";
+import MapData from "./Pages/MapData";
 
 function App() {
   useEffect(() => {
@@ -167,6 +168,14 @@ function App() {
         </Route>
         <Route exact path="/data">
           <DataPage
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/mapdata">
+          <MapData
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}
