@@ -18,7 +18,7 @@ import { Text } from "ol/style";
 import Popup from "./Popup";
 import myData from "../../assets/data/data";
 import Graticule from "ol/layer/Graticule";
-import "../../Styles/_map.scss"
+import "../../Styles/_map.scss";
 
 const Item = (props) => {
   const [checked, setChecked] = useState(props.checked);
@@ -149,10 +149,10 @@ export default function Maps(props) {
     "#61645E",
   ];
   let networks = [
-    { name: "Utilities", url: "UtilityNetwork" },
+    { name: "Utilities", url: "AnimalHealth" },
     { name: "Sewer", url: "SewerNetwork" },
   ];
-  const [activeUrl, setActiveUrl] = useState("UtilityNetwork");
+  const [activeUrl, setActiveUrl] = useState("AnimalHealth");
   const [map, setMap] = useState();
   const [featuresLayer, setFeaturesLayer] = useState();
   const mapElement = useRef();
@@ -220,8 +220,8 @@ export default function Maps(props) {
       layers: [basemap, initalFeaturesLayer, vLayer, Landmarks],
       view: new View({
         projection: "EPSG:4326",
-        center: [37.1274, -0.4832],
-        zoom: 15,
+        center: [36.8721, -1.2953],
+        zoom: 14,
         maxZoom: 32,
       }),
       controls: defaultControls().extend([
