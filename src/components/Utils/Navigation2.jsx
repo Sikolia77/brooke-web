@@ -28,7 +28,7 @@ export default function Navigation2(props) {
   var jwt = require("jsonwebtoken");
 
   useEffect(() => {
-    const token = localStorage.getItem("nimda_ksa");
+    const token = localStorage.getItem("token");
 
     if (token) {
       var decoded = jwt.decode(token);
@@ -47,8 +47,8 @@ export default function Navigation2(props) {
               <NavGroup title="PUBLISHED DATA">
                 <NavLink
                   active={props.active}
-                  url="/mapdata"
-                  txt="Advocacy and Innovation"
+                  url="/animalhealthdata"
+                  txt="Animal Health"
                 />
                 <NavLink
                   active={props.active}
@@ -57,15 +57,19 @@ export default function Navigation2(props) {
                 />
                 <NavLink
                   active={props.active}
-                  url="/animalhealthdata"
-                  txt="Animal Health"
+                  url="/mapdata"
+                  txt="Advocacy and Innovation"
                 />
                 <NavLink
                   active={props.active}
                   url="/communicationsdata"
                   txt="Communication"
                 />
-                <NavLink active={props.active} url="/partnersdata" txt="Partners" />
+                <NavLink
+                  active={props.active}
+                  url="/partnersdata"
+                  txt="Partners"
+                />
               </NavGroup>
             </div>
             <div className="div2">

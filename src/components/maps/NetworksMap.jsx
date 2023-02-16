@@ -149,8 +149,8 @@ export default function Maps(props) {
     "#61645E",
   ];
   let networks = [
-    { name: "Utilities", url: props.url },
-    { name: "Sewer", url: "SewerNetwork" },
+    { name: "", url: props.url },
+    { name: "", url: props.url },
   ];
   const [activeUrl, setActiveUrl] = useState(props.url);
   const [map, setMap] = useState();
@@ -187,8 +187,6 @@ export default function Maps(props) {
   const [reports, setReports] = useState(new VectorLayer({ title: "reports" }));
   const [selected, setSelected] = useState(0);
   const [netSelected, setNetSelected] = useState(0);
-
-
 
   let legItems = [];
   let legItemsStyles = [];
@@ -800,11 +798,10 @@ const Layers = (props) => {
         setDisplay("block");
       }}
     >
-      <h3>
-        Map Layers <i className="fa fa-angle-down"></i>
-      </h3>
+      <h6>
+        Basemap <i className="fa fa-angle-down"></i>
+      </h6>
       <div className="container" style={{ display: display }}>
-        <h4>Basemap</h4>
         <div className="basemaps">
           {myData.map((item, index) => {
             return (
@@ -821,28 +818,6 @@ const Layers = (props) => {
             );
           })}
         </div>
-        <h4>Networks</h4>
-        <div className="basemaps">
-          {props.networks.map((item, index) => {
-            return (
-              <Network
-                key={index}
-                index={index}
-                label={item.name}
-                layer={props.basemap}
-                setLayer={props.setBasemap}
-                url={item.url}
-                netSelected={props.netSelected}
-                setNetSelected={props.setNetSelected}
-                setActiveUrl={props.setActiveUrl}
-              />
-            );
-          })}
-        </div>
-        {/* <h4>Map Grid</h4>
-        <Item label="Graticule" layer={props.graticule} checked={true} />
-        <h4>Layers</h4>
-        <Item label="Incidences" layer={props.incidences} checked={true} /> */}
       </div>
     </div>
   );
