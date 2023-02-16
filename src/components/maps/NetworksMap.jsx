@@ -188,9 +188,7 @@ export default function Maps(props) {
   const [selected, setSelected] = useState(0);
   const [netSelected, setNetSelected] = useState(0);
 
-  const popup = new Overlay({
-    element: tooltip.current,
-  });
+
 
   let legItems = [];
   let legItemsStyles = [];
@@ -234,63 +232,10 @@ export default function Maps(props) {
       ]),
     });
 
-    initialMap.addOverlay(popup);
-
     initialMap.on("moveend", function (e) {
       setShowing([]);
       setMany({ data: null, count: null });
       setSingle(null);
-    });
-
-    initialMap?.on("singleclick", function (event) {
-      setShowing([]);
-      setMany({ data: null, count: null });
-      setSingle(null);
-      var feature = initialMap.getFeaturesAtPixel(event.pixel);
-      if (feature?.length > 0) {
-        if (feature[0]?.values_?.features?.length > 1) {
-          let m = [];
-          for (let count = 0; count < 5; count++) {
-            m.push({
-              Name: feature[0]?.values_?.features[count]?.values_?.Name,
-              AccountNo:
-                feature[0]?.values_?.features[count]?.values_?.AccountNo,
-              MeterNo: feature[0]?.values_?.features[count]?.values_?.MeterNo,
-              CurrentBal:
-                feature[0]?.values_?.features[count]?.values_?.CurrentBal,
-              PreviousBal:
-                feature[0]?.values_?.features[count]?.values_?.PreviousBal,
-              InvoiceAmount:
-                feature[0]?.values_?.features[count]?.values_?.InvoiceAmount,
-              Location: feature[0]?.values_?.features[count]?.values_?.Location,
-            });
-          }
-
-          let d = many;
-          d.data = m;
-          d.count = feature[0]?.values_.features.length;
-          setMany(d);
-          let s = [event.pixel[1], event.pixel[0]];
-          if (showing.length === 0) {
-            setShowing(s);
-          }
-        } else {
-          setSingle({
-            Name: feature[0]?.values_?.features[0]?.values_?.Name,
-            AccountNo: feature[0]?.values_?.features[0]?.values_?.AccountNo,
-            MeterNo: feature[0]?.values_?.features[0]?.values_?.MeterNo,
-            CurrentBal: feature[0]?.values_?.features[0]?.values_?.CurrentBal,
-            PreviousBal: feature[0]?.values_?.features[0]?.values_?.PreviousBal,
-            InvoiceAmount:
-              feature[0]?.values_?.features[0]?.values_?.InvoiceAmount,
-            Location: feature[0]?.values_?.features[0]?.values_?.Location,
-          });
-          let s = [event.pixel[1], event.pixel[0]];
-          if (showing.length === 0) {
-            setShowing(s);
-          }
-        }
-      }
     });
 
     setMap(initialMap);
@@ -563,13 +508,13 @@ export default function Maps(props) {
                 parseFloat(item?.geometry?.coordinates[0][0]),
                 parseFloat(item?.geometry?.coordinates[0][1]),
               ]),
-              Name: item?.properties?.name,
-              AccountNo: item?.properties?.account,
-              MeterNo: item?.properties?.meterno,
-              CurrentBal: item?.properties?.currentbal,
-              ConnectionStatus: item?.properties?.connstatus,
-              Location: item?.properties?.location,
-              Material: item?.properties?.material,
+              // Name: item?.properties?.name,
+              // AccountNo: item?.properties?.account,
+              // MeterNo: item?.properties?.meterno,
+              // CurrentBal: item?.properties?.currentbal,
+              // ConnectionStatus: item?.properties?.connstatus,
+              // Location: item?.properties?.location,
+              // Material: item?.properties?.material,
             })
           );
         });
@@ -645,15 +590,6 @@ export default function Maps(props) {
                 parseFloat(item?.geometry?.coordinates[0]),
                 parseFloat(item?.geometry?.coordinates[1]),
               ]),
-              Name: item?.properties?.name,
-              AccountNo: item?.properties?.account,
-              MeterNo: item?.properties?.meterno,
-              CurrentBal: item?.properties?.currentbal,
-              InvoiceAmount: item?.properties?.invoiceamo,
-              PreviousBal: item?.properties?.previousba,
-              ConnectionStatus: item?.properties?.connstatus,
-              Location: item?.properties?.location,
-              Material: item?.properties?.material,
             })
           );
         });
@@ -781,15 +717,6 @@ export default function Maps(props) {
             active={analysis}
           />
         </div>
-
-        {showing?.length > 0 && (
-          <Popup
-            many={many}
-            single={single}
-            top={showing[0]}
-            left={showing[1]}
-          />
-        )}
         <Layers
           basemap={basemap}
           networks={networks}
