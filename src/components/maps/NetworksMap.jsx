@@ -149,10 +149,10 @@ export default function Maps(props) {
     "#61645E",
   ];
   let networks = [
-    { name: "Utilities", url: "AnimalHealth" },
+    { name: "Utilities", url: props.url },
     { name: "Sewer", url: "SewerNetwork" },
   ];
-  const [activeUrl, setActiveUrl] = useState("AnimalHealth");
+  const [activeUrl, setActiveUrl] = useState(props.url);
   const [map, setMap] = useState();
   const [featuresLayer, setFeaturesLayer] = useState();
   const mapElement = useRef();

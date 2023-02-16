@@ -28,6 +28,10 @@ import AnimalHealth from "./components/PublishedInstances/AnimalHealth";
 import Partners from "./components/PublishedInstances/Partners";
 import Communication from "./components/PublishedInstances/Communication";
 import MapData from "./Pages/MapData";
+import CommunityData from "./Pages/CommunityData";
+import CommunicationData from "./Pages/CommunicationData";
+import PartnersData from "./Pages/PartnersData";
+import AnimalHealthData from "./Pages/AnimalHealthData";
 
 function App() {
   useEffect(() => {
@@ -176,6 +180,38 @@ function App() {
         </Route>
         <Route exact path="/mapdata">
           <MapData
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/communitydata">
+          <CommunityData
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/animalhealthdata">
+          <AnimalHealthData
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/communicationsdata">
+          <CommunicationData
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/partnersdata">
+          <PartnersData
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}
