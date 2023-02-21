@@ -60,7 +60,7 @@ export default function Header(props) {
   };
 
   const logout = () => {
-    fetch("/api/users/logout", {
+    fetch("/api/auth/logout", {
       method: "get",
       credentials: "include",
     })
