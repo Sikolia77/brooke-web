@@ -1,9 +1,5 @@
 import React, { useRef, useState, useEffect, useLocation } from "react";
-import Footer from "../components/Utils/footer";
-import Hero from "../components/ContactUs/Hero";
-import Button from "../components/Utils/button1";
 import Header from "../components/Utils/header";
-import Header2 from "../components/Utils/Header2";
 import UsrStats from "../components/Instances/UsrStats";
 import MapCategory from "../components/maps/MapCategory";
 import Navigation from "../components/Utils/Navigation";

@@ -3,7 +3,6 @@ import logo from "../../assets/imgs/brookelogo.png";
 import ModalHeader from "./modal_header";
 import { useLocation } from "react-router-dom";
 import Login from "./loginPopUp";
-import RegisterPopUp from "./registerPopUp";
 import UserAccount from "./userAccount";
 import EditUserDetails from "./editUserDetails";
 import ChangePassword from "./ChangePassword";

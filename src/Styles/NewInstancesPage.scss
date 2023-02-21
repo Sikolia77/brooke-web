@@ -3,11 +3,10 @@
 
 .NewinstancesPage {
   height: 100vh;
-  
 
   .newData {
     display: grid;
-    grid-template-columns:auto 3fr;
+    grid-template-columns: auto 3fr;
 
     .dataSection {
       //overflow-y: auto;
@@ -630,6 +629,7 @@
 
       .cont {
         padding: 2em;
+        background-color: white;
 
         .input-map {
           label {
@@ -653,6 +653,12 @@
         .div2equal {
           gap: 2em !important;
           margin: 2em 0 2em 0;
+        }
+
+        .divequal {
+          .thumb{
+            padding-bottom: 2em;
+          }
         }
 
         .img {

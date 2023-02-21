@@ -37,8 +37,8 @@ export default function AnimalHealthData(props) {
       <div className="MainingsContent">
         <Header
           active="MapData"
-          isAuthenticated={props.isAuthenticated}
-          setIsAuthenticated={props.setIsAuthenticated}
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
           currentUser={currentUser}
           setCurrentUser={setCurrentUser}
         />

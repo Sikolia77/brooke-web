@@ -1,5 +1,5 @@
 import "../Styles/NewInstancesPage.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import Options from "../components/maps/Options";
 import Header2 from "../components/Utils/Header2";
@@ -17,17 +17,41 @@ import Partners from "../components/Partners/Partners";
 
 export default function NewInstancesPage(props) {
   const [type, setType] = useState(null);
+  const [currentUser, setCurrentUser] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  var jwt = require("jsonwebtoken");
+
+  useEffect(() => {
+    const token = localStorage.getItem("cilbup_ksa");
+    if (token) {
+      try {
+        var decoded = jwt.decode(token);
+        setCurrentUser(decoded);
+
+        if (Date.now() >= decoded.exp * 1000) {
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [isAuthenticated]);
 
   return (
     <div className="NewinstancesPage">
       <Header
-        isAuthenticated={props.isAuthenticated}
-        setIsAuthenticated={props.setIsAuthenticated}
-        currentUser={props.currentUser}
-        setCurrentUser={props.setCurrentUser}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
       />
       <div className="newData">
-        <Navigation active="Add Data" />
+        <Navigation active="Create Map" />
         <div className="dataSection">
           {!type ? (
             <>

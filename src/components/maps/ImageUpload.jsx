@@ -33,11 +33,7 @@ export default function ImageUpload(props) {
     <div className="photo">
       {!props.preview ? (
         <>
-          <h3>Upload a thumbnail</h3>
-          <p>
-            This image will be used as a thumbnail for this map instance. It
-            should, therefore, represent the intended theme of the map instance.
-          </p>
+          <h3>Add thumbnail</h3>
         </>
       ) : (
         <h3>Map Thumbnail</h3>

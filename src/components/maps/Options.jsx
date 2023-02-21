@@ -2,7 +2,7 @@ export default function Options(props) {
   return (
     <div className="model22">
       <div className="container22">
-        <h3>Select Department</h3>
+        <h3>Select Section</h3>
         <h4
           onClick={() => {
             props.setType("Advocacy");

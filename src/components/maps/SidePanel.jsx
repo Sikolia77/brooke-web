@@ -29,10 +29,11 @@ export default function SidePanel(props) {
           <div className="bar">
             {props.update ||
               (props.new && <Bar txt="Data" id={0} toggle={toggle} />)}
+            {!props.worldData && <Bar txt="Styling" id={2} toggle={toggle} />}
             {!props.worldData && props.body.attributes.Theme !== "Topo Map" && (
               <Bar txt="Analysis" id={1} toggle={toggle} />
             )}
-            {!props.worldData && <Bar txt="Layers" id={2} toggle={toggle} />}
+
             {/* <Bar txt="Data" id={0} toggle={toggle} />
             <Bar txt="Analysis" id={1} toggle={toggle} />
             <Bar txt="Layers" id={2} toggle={toggle} /> */}

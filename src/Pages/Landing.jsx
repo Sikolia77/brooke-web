@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Header from "../components/Utils/header";
 import "leaflet/dist/leaflet.css";
 import { useLocation } from "react-router-dom";
-import ButtonMain from "../components/Utils/ButtonMain";
 
 function DataLink(props) {
   const location = useLocation();
@@ -33,7 +32,6 @@ function DataLink(props) {
   return link;
 }
 
-
 export default function Landing(props) {
   return (
     <div className="landingnew">
@@ -44,6 +42,7 @@ export default function Landing(props) {
         setCurrentUser={props.setCurrentUser}
         parent="landing"
       />
+
       <div className="lcontainer">
         <div className="wrap">
           <div className="top">

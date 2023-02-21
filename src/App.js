@@ -21,7 +21,6 @@ import NewInstancesPage from "./Pages/NewInstancesPage";
 import UsersPage from "./Pages/Users";
 import NewUser from "./Pages/NewUser";
 import LoginPage from "./Pages/LoginPage";
-import LoginPopUp from "./components/Utils/loginPopUp";
 import Advocacy from "./components/PublishedInstances/Advocacy";
 import CommunityEngagement from "./components/PublishedInstances/CommunityEngagement";
 import AnimalHealth from "./components/PublishedInstances/AnimalHealth";
