@@ -33,9 +33,6 @@ function DataLink(props) {
   return link;
 }
 
-const showData = () => {
-  window.location.href = "/data";
-};
 
 export default function Landing(props) {
   return (
