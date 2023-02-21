@@ -77,7 +77,7 @@ export default function Navigation(props) {
                   <NavLink
                     active={props.active}
                     url="/admin/newinstance"
-                    txt="Add Data"
+                    txt="Create Map"
                   />
                 </>
               </NavGroup>
