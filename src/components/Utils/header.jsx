@@ -146,8 +146,8 @@ export default function Header(props) {
 
           <div className="nav">
             <NavLink className="navlink" txt="Home" url="/" />
-            <NavLink txt="Data" url="/data" />
-            <NavLink txt="Map" url="/animalhealthdata" />
+            <NavLink txt="Maps" url="/data" />
+            <NavLink txt="Data" url="/animalhealthdata" />
             <NavLink txt="About" url="/about" />
             <div
               className="nav2"

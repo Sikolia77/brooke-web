@@ -217,7 +217,7 @@ export default function Maps(props) {
       view: new View({
         projection: "EPSG:4326",
         center: [36.8721, -1.2953],
-        zoom: 14,
+        zoom: 8,
         maxZoom: 32,
       }),
       controls: defaultControls().extend([
