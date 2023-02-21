@@ -72,29 +72,6 @@ const Basemap = (props) => {
   );
 };
 
-const Network = (props) => {
-  useEffect(() => {
-    if (props.netSelected === props.index) {
-      props.setActiveUrl(props.url);
-    }
-  }, [props.netSelected]);
-
-  return (
-    <div className="item">
-      <input
-        type="checkbox"
-        onChange={(e) => {
-          props.setNetSelected(props.index);
-        }}
-        name=""
-        id=""
-        checked={props.netSelected === props.index ? true : false}
-      />
-      <label htmlFor="">{props.label}</label>
-    </div>
-  );
-};
-
 const Analysis = (props) => {
   return (
     <select
@@ -185,7 +162,7 @@ export default function Maps(props) {
   const [layers, setLayers] = useState(new VectorLayer({ title: "layers" }));
 
   const [reports, setReports] = useState(new VectorLayer({ title: "reports" }));
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(1);
   const [netSelected, setNetSelected] = useState(0);
 
   let legItems = [];
@@ -285,70 +262,6 @@ export default function Maps(props) {
     }
   }, []);
 
-  function dataStyle(feature) {
-    const styleCache = {};
-
-    let size = feature.values_.features.length;
-    let style = styleCache[size];
-    if (!style) {
-      if (size === 1) {
-        style = new Style({
-          image: new CircleStyle({
-            radius: 10,
-            stroke: new Stroke({
-              color: "#fff",
-              width: 3,
-            }),
-            fill: new Fill({
-              color: "#5BB318",
-            }),
-          }),
-        });
-        styleCache[size] = style;
-      } else {
-        let r = Math.ceil(size / 5);
-        if (r < 10) r = 10;
-        else if (r > 40) r = 40;
-        style = new Style({
-          image: new CircleStyle({
-            radius: r,
-            stroke: new Stroke({
-              color: getColor(),
-              width: 3,
-            }),
-            fill: new Fill({
-              color: "#00D7FF",
-            }),
-          }),
-          text: new Text({
-            text: size.toString(),
-            fill: new Fill({
-              color: "#fff",
-            }),
-          }),
-        });
-        styleCache[size] = style;
-      }
-    }
-    return style;
-  }
-
-  function regularDataStyle(feature) {
-    const style = new Style({
-      image: new CircleStyle({
-        radius: 5,
-        stroke: new Stroke({
-          color: "#fff",
-          width: 2,
-        }),
-        fill: new Fill({
-          color: "#5BB318",
-        }),
-      }),
-    });
-    return style;
-  }
-
   function reportsStyle(feature) {
     const styleCache = {};
 
@@ -406,70 +319,6 @@ export default function Maps(props) {
     return color;
   }
 
-  const loadMapData = () => {
-    setLoading(true);
-    fetch("/api/reports")
-      .then((res) => {
-        if (res.ok) return res.json();
-        else throw Error("");
-      })
-      .then((data) => {
-        setLoading(false);
-        // props.setBody(data);
-        let points = [];
-        data?.forEach((item) => {
-          points.push(
-            new Feature({
-              geometry: new Point([
-                parseFloat(item.Longitude),
-                parseFloat(item.Latitude),
-              ]),
-            })
-          );
-        });
-
-        const source = new VectorSource({
-          features: points,
-        });
-
-        setVector(source);
-
-        const clusterSource = new Cluster({
-          distance: parseInt(100, 10),
-          minDistance: parseInt(0, 10),
-          source: source,
-        });
-
-        const vector = new VectorSource({
-          source: source,
-        });
-
-        reports.setSource(source);
-        reports.setStyle(regularDataStyle);
-        map.getView().fit(source.getExtent(), {
-          padding: [100, 100, 100, 100],
-        });
-      })
-      .catch((e) => {
-        setLoading(false);
-      });
-  };
-
-  function regularDataStyle(feature) {
-    const style = new Style({
-      image: new CircleStyle({
-        radius: 8,
-        stroke: new Stroke({
-          color: "#fff",
-          width: 2,
-        }),
-        fill: new Fill({
-          color: "#5BB318",
-        }),
-      }),
-    });
-    return style;
-  }
 
   async function loadLayer(layername, color) {
     map.getLayers().forEach((layer) => {
@@ -506,13 +355,6 @@ export default function Maps(props) {
                 parseFloat(item?.geometry?.coordinates[0][0]),
                 parseFloat(item?.geometry?.coordinates[0][1]),
               ]),
-              // Name: item?.properties?.name,
-              // AccountNo: item?.properties?.account,
-              // MeterNo: item?.properties?.meterno,
-              // CurrentBal: item?.properties?.currentbal,
-              // ConnectionStatus: item?.properties?.connstatus,
-              // Location: item?.properties?.location,
-              // Material: item?.properties?.material,
             })
           );
         });
@@ -525,12 +367,7 @@ export default function Maps(props) {
           minDistance: parseInt(0, 10),
           source: psource,
         });
-        // vLayer = new VectorLayer({
-        //   source: clusterSource,
-        // });
         vLayer.setSource(clusterSource);
-        // vLayer = new VectorLayer();
-        // vLayer.setSource(psource);
         vLayer.setStyle(function (feature) {
           const styleCache = {};
           let size = feature.values_.features.length;
@@ -600,12 +437,7 @@ export default function Maps(props) {
           minDistance: parseInt(0, 10),
           source: psource,
         });
-        // vLayer = new VectorLayer({
-        //   source: clusterSource,
-        // });
         vLayer.setSource(clusterSource);
-        // vLayer = new VectorLayer();
-        // vLayer.setSource(psource);
         vLayer.setStyle(function (feature) {
           const styleCache = {};
           let size = feature.values_.features.length;
@@ -689,11 +521,6 @@ export default function Maps(props) {
     return color;
   }
 
-  function olColor(cl, alpha) {
-    var colorArray = asArray(cl).slice();
-    colorArray[3] = alpha;
-    return colorArray;
-  }
 
   function getUrl(url) {
     return `/geoserver/${activeUrl}/wfs?request=GetFeature&version=1.0.0&typeName=${activeUrl}:${url}&outputFormat=json`;
