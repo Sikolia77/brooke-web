@@ -165,6 +165,10 @@ export default function Maps(props) {
   const [selected, setSelected] = useState(1);
   const [netSelected, setNetSelected] = useState(0);
 
+  const popup = new Overlay({
+    element: tooltip.current,
+  });
+
   let legItems = [];
   let legItemsStyles = [];
 
@@ -207,10 +211,52 @@ export default function Maps(props) {
       ]),
     });
 
+    initialMap.addOverlay(popup);
+
     initialMap.on("moveend", function (e) {
       setShowing([]);
       setMany({ data: null, count: null });
       setSingle(null);
+    });
+
+    initialMap?.on("singleclick", function (event) {
+      setShowing([]);
+      setMany({ data: null, count: null });
+      setSingle(null);
+      var feature = initialMap.getFeaturesAtPixel(event.pixel);
+      if (feature?.length > 0) {
+        if (feature[0]?.values_?.features?.length > 1) {
+          let m = [];
+          for (let count = 0; count < 5; count++) {
+            m.push({
+              Name: feature[0]?.values_?.features[count]?.values_?.Name,
+              County: feature[0]?.values_?.features[count]?.values_?.County,
+              SubCounty:
+                feature[0]?.values_?.features[count]?.values_?.SubCounty,
+              Ward: feature[0]?.values_?.features[count]?.values_?.Ward,
+            });
+          }
+          let d = many;
+          d.data = m;
+          d.count = feature[0]?.values_.features.length;
+          setMany(d);
+          let s = [event.pixel[1], event.pixel[0]];
+          if (showing.length === 0) {
+            setShowing(s);
+          }
+        } else {
+          setSingle({
+            Name: feature[0]?.values_?.features[0]?.values_?.Name,
+            County: feature[0]?.values_?.features[0]?.values_?.County,
+            SubCounty: feature[0]?.values_?.features[0]?.values_?.SubCounty,
+            Ward: feature[0]?.values_?.features[0]?.values_?.Ward,
+          });
+          let s = [event.pixel[1], event.pixel[0]];
+          if (showing.length === 0) {
+            setShowing(s);
+          }
+        }
+      }
     });
 
     setMap(initialMap);
@@ -319,7 +365,6 @@ export default function Maps(props) {
     return color;
   }
 
-
   async function loadLayer(layername, color) {
     map.getLayers().forEach((layer) => {
       if (
@@ -339,6 +384,7 @@ export default function Maps(props) {
       error: function (xhr) {},
     });
     $.when(wrd).done(function (data) {
+      console.log(data);
       let vLayer = new VectorLayer({
         title: layername,
       });
@@ -425,6 +471,10 @@ export default function Maps(props) {
                 parseFloat(item?.geometry?.coordinates[0]),
                 parseFloat(item?.geometry?.coordinates[1]),
               ]),
+              Name: item?.properties?.Name,
+              County: item?.properties?.County,
+              SubCounty: item?.properties?.SubCounty,
+              Ward: item?.properties?.Ward,
             })
           );
         });
@@ -521,7 +571,6 @@ export default function Maps(props) {
     return color;
   }
 
-
   function getUrl(url) {
     return `/geoserver/${activeUrl}/wfs?request=GetFeature&version=1.0.0&typeName=${activeUrl}:${url}&outputFormat=json`;
   }
@@ -542,6 +591,14 @@ export default function Maps(props) {
             active={analysis}
           />
         </div>
+        {showing?.length > 0 && (
+          <Popup
+            many={many}
+            single={single}
+            top={showing[0]}
+            left={showing[1]}
+          />
+        )}
         <Layers
           basemap={basemap}
           networks={networks}

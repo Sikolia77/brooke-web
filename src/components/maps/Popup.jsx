@@ -25,27 +25,21 @@ export default function Popup(props) {
             <h3>Details</h3>
             <div className="hd">
               <h4>Name</h4>
-              <h4>AccountNo</h4>
-              <h4>Meter No.</h4>
-              <h4>Current Balance</h4>
-              <h4>Previous Balance</h4>
-              <h4>Invoice Amount</h4>
-              <h4>Location</h4>
+              <h4>County</h4>
+              <h4>Sub County</h4>
+              <h4>Ward</h4>
             </div>
             {props.many?.data.map((item, index) => {
               return (
                 <div key={index} className="dt">
                   {<p>{item.Name}</p>}
-                  {<p>{item.AccountNo}</p>}
-                  {<p>{item.MeterNo}</p>}
-                  {<p>{item.CurrentBal}</p>}
-                  {<p>{item.PreviousBal}</p>}
-                  {<p>{item.InvoiceAmount}</p>}
-                  <p>{item.Location}</p>
+                  {<p>{item.County}</p>}
+                  {<p>{item.SubCounty}</p>}
+                  {<p>{item.Ward}</p>}
                 </div>
               );
             })}
-            <h4>Total customers in group: {props.many.count}</h4>
+            <h4>Total in group: {props.many.count}</h4>
           </div>
         ) : (
           <div className="single">
@@ -83,25 +77,14 @@ export default function Popup(props) {
                   Name: <span>{props.single.Name}</span>
                 </p>
                 <p>
-                  Account No: <span>{props.single.AccountNo}</span>
+                  County: <span>{props.single.County}</span>
                 </p>
                 <p>
-                  Meter No: <span>{props.single.MeterNo}</span>
+                  SubCounty: <span>{props.single.SubCounty}</span>
                 </p>
                 <p>
-                  Current Balance: <span>{props.single.CurrentBal}</span>
+                  Ward: <span>{props.single.Ward}</span>
                 </p>
-                <p>
-                  Invoice Amount: <span>{props.single.InvoiceAmount}</span>
-                </p>
-                <p>
-                  Previous Balance: <span>{props.single.PreviousBal}</span>
-                </p>
-                <p>
-                  Location: <span>{props.single.Location}</span>
-                </p>
-
-                <h4>Explore more in the data section</h4>
               </>
             )}
           </div>
