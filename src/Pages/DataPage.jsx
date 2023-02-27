@@ -17,7 +17,7 @@ export default function DataPage(props) {
   const rfSearch = useRef();
 
   useEffect(() => {
-    console.log("all")
+    console.log("all");
     setUrl(`/all/${offset * 12}`);
   }, [offset]);
 
@@ -95,7 +95,6 @@ export default function DataPage(props) {
       setUrl(url);
     }
   };
-
 
   return (
     <div>

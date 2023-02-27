@@ -1,5 +1,5 @@
 .AboutPage {
-  // background-image: url("../assets//imgs/donkey.png");
+  // background-image: url("../assets//imgs/donkey3.jpg");
   // background-position: center;
   // background-repeat: no-repeat;
   // background-size: cover;
@@ -8,7 +8,7 @@
       position: relative;
       width: 92.5%;
       margin: 0 0 0 auto;
-      height: 80vh;
+      height: 60vh;
       display: flex;
       flex-direction: row;
       //padding-top: 20px;
@@ -18,7 +18,7 @@
         flex-direction: column;
         width: 100%;
         height: 100%;
-        padding: 2% 5rem 2rem 0;
+        //padding: 2% 5rem 2rem 0;
 
         p {
           font-size: medium;
@@ -89,75 +89,12 @@
       }
     }
 
-    &.section-2 {
-      position: relative;
-      max-width: 92.5%;
-      width: 100%;
-      margin: 0 auto 0 0;
-      height: fit-content;
-      text-align: center;
-      padding-top: 5em;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      .text {
-        position: relative;
-        width: 100%;
-        text-align: left;
-        padding-left: 50px;
-
-        h2 {
-          font-size: x-large;
-          margin: 15px 0 15px 0;
-          color: #a20c0c;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-image: linear-gradient(120deg, #a20c0c 0%, #0e0e80 100%);
-        }
-        p {
-          font-size: medium;
-          line-height: 1.5;
-        }
-      }
-
-      .img-hero {
-        position: relative;
-        margin: 10px auto;
-        width: 85%;
-        height: 50vh;
-        background-size: cover;
-        background-position: center;
-
-        &::before {
-          content: "";
-          position: absolute;
-          top: 10px;
-          left: 10px;
-          width: 102%;
-          height: 102%;
-          background: linear-gradient(120deg, #a20c0c 0%, #0e0e80 100%);
-          z-index: -1;
-          transition: 300ms;
-        }
-      }
-
-      @include maxwidth(mobile) {
-        max-width: 85% !important;
-        margin: 0 auto 0 auto !important;
-
-        .text {
-          padding-left: 0 !important;
-          margin: 1em auto 0 auto !important;
-        }
-      }
-    }
     &.section-3 {
       position: relative;
       width: 100%;
       height: auto;
       text-align: center;
-      padding-top: 100px;
+      //padding-top: 100px;
 
       h2 {
         margin: 1em 7.5% 1em 7.5%;

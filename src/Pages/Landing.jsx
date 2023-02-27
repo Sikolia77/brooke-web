@@ -34,16 +34,17 @@ function DataLink(props) {
 
 export default function Landing(props) {
   return (
-    <div className="landingnew">
-      <Header
-        isAuthenticated={props.isAuthenticated}
-        setIsAuthenticated={props.setIsAuthenticated}
-        currentUser={props.currentUser}
-        setCurrentUser={props.setCurrentUser}
-        parent="landing"
-      />
-
-      <div className="lcontainer">
+    <div className="landpage">
+      <div className="headings">
+        <Header
+          isAuthenticated={props.isAuthenticated}
+          setIsAuthenticated={props.setIsAuthenticated}
+          currentUser={props.currentUser}
+          setCurrentUser={props.setCurrentUser}
+        />
+      </div>
+      <div className="landingnew">
+        <div className="lcontainer">
         <div className="wrap">
           <div className="top">
             <h1>BROOKE EAST AFRICA GIS PORTAL</h1>
@@ -77,6 +78,8 @@ export default function Landing(props) {
           </div>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 }

@@ -35,13 +35,15 @@ export default function CommunityData(props) {
   return (
     <div className="mapdata">
       <div className="MainingsContent">
-        <Header
-          active="Maps"
-          isAuthenticated={isAuthenticated}
-          setIsAuthenticated={setIsAuthenticated}
-          currentUser={currentUser}
-          setCurrentUser={setCurrentUser}
-        />
+        <div className="headings">
+          <Header
+            active="MapData"
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </div>
         <div className="home ">
           <Navigation active="Community Engagement" />
           <Maps url="CommunityEngagement" />

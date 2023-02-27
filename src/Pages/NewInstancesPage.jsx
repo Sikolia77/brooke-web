@@ -44,12 +44,15 @@ export default function NewInstancesPage(props) {
 
   return (
     <div className="NewinstancesPage">
-      <Header
-        isAuthenticated={isAuthenticated}
-        setIsAuthenticated={setIsAuthenticated}
-        currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
-      />
+      <div className="headings">
+        <Header
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
+      </div>
+
       <div className="newData">
         <Navigation active="Create Map" />
         <div className="dataSection">

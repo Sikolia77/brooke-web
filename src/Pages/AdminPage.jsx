@@ -78,13 +78,16 @@ export default function AdminPagePage(props) {
   return (
     <div className="AdminPage">
       <div className="MainsContent">
-        <Header
-          active="Admin"
-          isAuthenticated={props.isAuthenticated}
-          setIsAuthenticated={props.setIsAuthenticated}
-          currentUser={currentUser}
-          setCurrentUser={setCurrentUser}
-        />
+        <div className="headings">
+          <Header
+            active="Admin"
+            isAuthenticated={props.isAuthenticated}
+            setIsAuthenticated={props.setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </div>
+
         <div className="publishedData">
           <Navigation active="Summary" />
           <div className="MainsContent">

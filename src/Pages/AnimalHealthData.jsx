@@ -35,13 +35,16 @@ export default function AnimalHealthData(props) {
   return (
     <div className="mapdata">
       <div className="MainingsContent">
-        <Header
-          active="MapData"
-          isAuthenticated={isAuthenticated}
-          setIsAuthenticated={setIsAuthenticated}
-          currentUser={currentUser}
-          setCurrentUser={setCurrentUser}
-        />
+        <div className="headings">
+          <Header
+            active="MapData"
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </div>
+
         <div className="home ">
           <Navigation active="Animal Health" />
           <Maps url="AnimalHealth" />

@@ -104,16 +104,7 @@ export default function Header(props) {
     }
   };
 
-  const headerRef = useRef(null);
-  // console.log(headerRef)
 
-  if (headerRef.current) {
-    if (props.parent == "landing") {
-      if (props.changeHeaderTheme)
-        headerRef.current.style.background = "#112D55";
-      else headerRef.current.style.background = "none";
-    } else headerRef.current.style.background = "#112D55";
-  }
 
   return (
     <div className="pop">
@@ -148,7 +139,7 @@ export default function Header(props) {
         />
       )}
 
-      <div className="header" id="header" ref={headerRef}>
+      <div className="header">
         <div className="container">
           <div
             onClick={() => {

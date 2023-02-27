@@ -42,13 +42,16 @@ export default function Communication(props) {
   return (
     <div className="AdminPage">
       <div className="MainsContent">
-        <Header
-          active="Admin"
-          isAuthenticated={props.isAuthenticated}
-          setIsAuthenticated={props.setIsAuthenticated}
-          currentUser={props.currentUser}
-          setCurrentUser={props.setCurrentUser}
-        />
+        <div className="headings">
+          <Header
+            active="Admin"
+            isAuthenticated={props.isAuthenticated}
+            setIsAuthenticated={props.setIsAuthenticated}
+            currentUser={props.currentUser}
+            setCurrentUser={props.setCurrentUser}
+          />
+        </div>
+
         <div className="publishedData">
           <Navigation active="Communication" />
           <div className="MainsContent">

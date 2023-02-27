@@ -38,13 +38,16 @@ export default function UsersPage(props) {
 
   return (
     <div className="users">
-      <Header
-        active="Users"
-        isAuthenticated={isAuthenticated}
-        setIsAuthenticated={setIsAuthenticated}
-        currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
-      />
+      <div className="headings">
+        <Header
+          active="Users"
+          isAuthenticated={isAuthenticated}
+          setIsAuthenticated={setIsAuthenticated}
+          currentUser={currentUser}
+          setCurrentUser={setCurrentUser}
+        />
+      </div>
+
       <div className="newusercontent">
         <Navigation active="Users" />
         <div className="UsersPage">

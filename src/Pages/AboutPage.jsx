@@ -1,20 +1,22 @@
 import React from "react";
 import Header from "../components/Utils/header";
 import about1Background from "../assets/imgs/about_1_background.jpg";
-import about2Background from "../assets/imgs/about.jpg";
+import about2Background from "../assets/imgs/donkey3.jpg";
 
 export default function AboutPage(props) {
   return (
     <div className="AboutPage">
-      <Header
-        isAuthenticated={props.isAuthenticated}
-        setIsAuthenticated={props.setIsAuthenticated}
-        currentUser={props.currentUser}
-        setCurrentUser={props.setCurrentUser}
-      />
+      <div className="headings">
+        <Header
+          isAuthenticated={props.isAuthenticated}
+          setIsAuthenticated={props.setIsAuthenticated}
+          currentUser={props.currentUser}
+          setCurrentUser={props.setCurrentUser}
+        />
+      </div>
+
       <section className="aboutPage section-1">
         <div className="text-main">
-          {/* <h1>About</h1> */}
           <h2>The GIS Portal</h2>
           <p>
             The data portal is our one stop platform that allows you to access,
@@ -25,7 +27,7 @@ export default function AboutPage(props) {
             <br /> By availing data remotely through this portal, we have
             facilitated institutions and individuals to save time and
             operational costs taken to access and set up data locally as would
-            be the case in an analogue setup. <br />
+            be the case in an analogue setup. 
           </p>
         </div>
         <div

@@ -35,13 +35,15 @@ export default function MapData(props) {
   return (
     <div className="mapdata">
       <div className="MainingsContent">
-        <Header
-          active="MapData"
-          isAuthenticated={props.isAuthenticated}
-          setIsAuthenticated={props.setIsAuthenticated}
-          currentUser={currentUser}
-          setCurrentUser={setCurrentUser}
-        />
+        <div className="headings">
+          <Header
+            active="MapData"
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </div>
         <div className="home ">
           <Navigation active="Advocacy and Innovation" />
           <Maps url="Advocacy" />
