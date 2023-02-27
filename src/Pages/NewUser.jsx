@@ -69,6 +69,30 @@ export default function Users(props) {
   const [data, setData] = useState(null);
   const [filter, setFilter] = useState("All Users");
   const [stats, setStats] = useState({ total: 0, active: 0, inactive: 0 });
+  const [currentUser, setCurrentUser] = useState();
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  var jwt = require("jsonwebtoken");
+
+  useEffect(() => {
+    const token = localStorage.getItem("cilbup_ksa");
+    if (token) {
+      try {
+        var decoded = jwt.decode(token);
+        setCurrentUser(decoded);
+
+        if (Date.now() >= decoded.exp * 1000) {
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, [isAuthenticated]);
 
   const toggleActive = (v) => {
     setActive(v);
@@ -92,7 +116,13 @@ export default function Users(props) {
 
   return (
     <div className="users">
-      <Header active="Users" />
+      <Header
+        active="Users"
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      />
       <div className="newusercontent">
         <Navigation active="Create User" />
         <div className="bot">
