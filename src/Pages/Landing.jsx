@@ -54,14 +54,10 @@ export default function Landing(props) {
               that protects and improves the lives of working equines, which
               promote equine centric thriving communities and systems
             </p>
-            {/* <ButtonMain label="View Data" handleClick={showData} /> */}
           </div>
           <div className="icons">
             <div className="depts">
-              <DataLink
-                txt="Innovation and Advocacy"
-                url="/category/Advocacy"
-              />
+              <DataLink txt="Partners" url="/category/Partners" />
             </div>
             <div className="depts">
               <DataLink txt="Community Engagement" url="/category/Community" />
@@ -70,10 +66,13 @@ export default function Landing(props) {
               <DataLink txt="Animal Health" url="/category/Health" />
             </div>
             <div className="depts">
-              <DataLink txt="Communication" url="/category/Communication" />
+              <DataLink
+                txt="Innovation and Advocacy"
+                url="/category/Advocacy"
+              />
             </div>
             <div className="depts">
-              <DataLink txt="Partners" url="/category/Partners" />
+              <DataLink txt="Communication" url="/category/Communication" />
             </div>
           </div>
         </div>

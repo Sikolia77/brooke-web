@@ -31,10 +31,27 @@ import CommunityData from "./Pages/CommunityData";
 import CommunicationData from "./Pages/CommunicationData";
 import PartnersData from "./Pages/PartnersData";
 import AnimalHealthData from "./Pages/AnimalHealthData";
+import ProtectedRoute from "./components/login/ProtectedRoute";
 
 function App() {
   useEffect(() => {
     Aos.init();
+  }, []);
+
+  const [role, setRole] = useState();
+
+  var jwt = require("jsonwebtoken");
+
+  useEffect(() => {
+    const token = localStorage.getItem("cilbup_ksa");
+
+    if (token) {
+      var decoded = jwt.decode(token);
+      setRole(decoded.Role);
+      console.log(decoded.Role);
+    } else {
+      setRole();
+    }
   }, []);
 
   var jwt = require("jsonwebtoken");
@@ -161,6 +178,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/nmap">
           <Map
             isAuthenticated={isAuthenticated}
@@ -169,6 +187,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/data">
           <DataPage
             isAuthenticated={isAuthenticated}
@@ -177,6 +196,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/mapdata">
           <MapData
             isAuthenticated={isAuthenticated}
@@ -185,38 +205,35 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
-        <Route exact path="/communitydata">
-          <CommunityData
-            isAuthenticated={isAuthenticated}
-            setIsAuthenticated={setIsAuthenticated}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
+
+        {role !== "Admin" && (
+          <ProtectedRoute
+            exact
+            path="/communitydata"
+            component={CommunityData}
           />
-        </Route>
-        <Route exact path="/animalhealthdata">
-          <AnimalHealthData
-            isAuthenticated={isAuthenticated}
-            setIsAuthenticated={setIsAuthenticated}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
+        )}
+
+        {role !== "Admin" && (
+          <ProtectedRoute
+            exact
+            path="/animalhealthdata"
+            component={AnimalHealthData}
           />
-        </Route>
-        <Route exact path="/communicationsdata">
-          <CommunicationData
-            isAuthenticated={isAuthenticated}
-            setIsAuthenticated={setIsAuthenticated}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
+        )}
+
+        {role !== "Admin" && (
+          <ProtectedRoute
+            exact
+            path="/communicationsdata"
+            component={CommunicationData}
           />
-        </Route>
-        <Route exact path="/partnersdata">
-          <PartnersData
-            isAuthenticated={isAuthenticated}
-            setIsAuthenticated={setIsAuthenticated}
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-          />
-        </Route>
+        )}
+
+        {role !== "Admin" && (
+          <ProtectedRoute exact path="/partnersdata" component={PartnersData} />
+        )}
+
         <Route exact path="/map">
           <NewMap
             isAuthenticated={isAuthenticated}
@@ -225,6 +242,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/admin/instances/*">
           <SingleInstancePage
             isAuthenticated={isAuthenticated}
@@ -233,9 +251,11 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/admin/newinstance">
           <NewInstancesPage />
         </Route>
+
         <Route exact path="/about">
           <AboutPage
             isAuthenticated={isAuthenticated}
@@ -253,6 +273,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/admin/users">
           <UsersPage
             isAuthenticated={isAuthenticated}
@@ -270,6 +291,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/advocacy">
           <Advocacy
             isAuthenticated={isAuthenticated}
@@ -278,6 +300,7 @@ function App() {
             setCurrentUser={setCurrentUser}
           />
         </Route>
+
         <Route exact path="/communityengagement">
           <CommunityEngagement
             isAuthenticated={isAuthenticated}
