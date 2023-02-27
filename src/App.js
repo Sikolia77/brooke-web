@@ -206,7 +206,16 @@ function App() {
           />
         </Route>
 
-        {role !== "Admin" && (
+        {/* <Route exact path="/animalhealthdata">
+          <AnimalHealthData
+            // isAuthenticated={isAuthenticated}
+            // setIsAuthenticated={setIsAuthenticated}
+            // currentUser={currentUser}
+            // setCurrentUser={setCurrentUser}
+          />
+        </Route> */}
+
+        {role == "Admin" && (
           <ProtectedRoute
             exact
             path="/communitydata"
@@ -214,7 +223,7 @@ function App() {
           />
         )}
 
-        {role !== "Admin" && (
+        {role == "Admin" && (
           <ProtectedRoute
             exact
             path="/animalhealthdata"
@@ -222,7 +231,7 @@ function App() {
           />
         )}
 
-        {role !== "Admin" && (
+        {role == "Admin" && (
           <ProtectedRoute
             exact
             path="/communicationsdata"
@@ -230,7 +239,7 @@ function App() {
           />
         )}
 
-        {role !== "Admin" && (
+        {role == "Admin" && (
           <ProtectedRoute exact path="/partnersdata" component={PartnersData} />
         )}
 

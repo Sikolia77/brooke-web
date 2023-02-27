@@ -58,6 +58,22 @@ export default function Header(props) {
     setClicked(!clicked);
   };
 
+  const [role, setRole] = useState();
+
+  var jwt = require("jsonwebtoken");
+
+  useEffect(() => {
+    const token = localStorage.getItem("cilbup_ksa");
+
+    if (token) {
+      var decoded = jwt.decode(token);
+      setRole(decoded.Role);
+      console.log(decoded.Role);
+    } else {
+      setRole();
+    }
+  }, []);
+
   const logout = () => {
     fetch("/api/auth/logout", {
       method: "get",
@@ -146,7 +162,7 @@ export default function Header(props) {
           <div className="nav">
             <NavLink className="navlink" txt="Home" url="/" />
             <NavLink txt="Maps" url="/data" />
-            <NavLink txt="Data" url="/animalhealthdata" />
+            {role == "Admin" && <NavLink txt="Data" url="/animalhealthdata" />}
             <NavLink txt="About" url="/about" />
             <div
               className="nav2"
