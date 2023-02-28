@@ -44,7 +44,7 @@ export default function Communication(props) {
       <div className="MainsContent">
         <div className="headings">
           <Header
-            active="Admin"
+            active="Home"
             isAuthenticated={props.isAuthenticated}
             setIsAuthenticated={props.setIsAuthenticated}
             currentUser={props.currentUser}

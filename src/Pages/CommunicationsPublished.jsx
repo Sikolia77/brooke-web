@@ -1,186 +1,65 @@
-import { React, useEffect, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../components/Utils/header";
-import "leaflet/dist/leaflet.css";
-import Footer from "../components/Utils/footer";
-import "../Styles/DataPage.scss";
-import DataSection from "../components/Utils/DataSection";
-import Pagination from "../components/Utils/pagination";
-import { useRef } from "react";
+import Navigation from "../components/Utils/Navigation";
+import MapCategory from "../components/maps/MapCategory2";
 
 export default function CommunicationsPublished(props) {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [currentUser, setCurrentUser] = useState();
+  const [categories, setCategories] = useState(null);
+  const [time, setTime] = useState(null);
+  const [stats, setStats] = useState({
+    total: null,
+    categories: null,
+    active: null,
+  });
   const [data, setData] = useState(null);
-  const [categories, setCategories] = useState([]);
   const [offset, setOffset] = useState(0);
-  const [url, setUrl] = useState();
-  const [searchData, setSearchData] = useState();
+  let prg = "";
 
-  const rfSearch = useRef();
-
-  useEffect(() => {
-    console.log("all");
-    setUrl(`/all/${offset * 12}`);
-  }, [offset]);
-
-  const searchGis = () => {
-    fetch(`/api/gis/search/${rfSearch.current.value}/${offset * 12}`, {
-      method: "get",
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("Could not fetch data!!!");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setSearchData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  var jwt = require("jsonwebtoken");
 
   useEffect(() => {
-    fetch(`/api/gis${url}`, {
-      method: "get",
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("Could not fetch messages!!!");
+    const token = localStorage.getItem("cilbup_ksa");
+    if (token) {
+      try {
+        var decoded = jwt.decode(token);
+        setCurrentUser(decoded);
+
+        if (Date.now() >= decoded.exp * 1000) {
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
         }
-        return res.json();
-      })
-      .then((data) => {
-        setData(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [url]);
-
-  function scrollPages(offset) {
-    setOffset(offset);
-  }
-
-  useEffect(() => {
-    fetch(`/api/gis/category/`, {
-      method: "get",
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("Could not fetch messages!!!");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        let list = [];
-        data.result.forEach((item) => {
-          list.push(item.Category);
-        });
-        setCategories(list);
-      })
-      .catch((err) => {});
-  }, []);
-
-  const onChangeOption = (e) => {
-    setUrl("");
-    setOffset(0);
-    setSearchData(null);
-    if (e.target.value === "All Categories") {
-      setUrl(`/all/${offset * 12}`);
+      } catch (error) {
+        setIsAuthenticated(false);
+      }
     } else {
-      let url = `/category/${e.target.value}/${offset * 12}`;
-      setUrl(url);
+      setIsAuthenticated(false);
     }
-  };
+  }, [isAuthenticated]);
 
   return (
-    <div>
-      <div className="headings">
-        <Header
-          isAuthenticated={props.isAuthenticated}
-          setIsAuthenticated={props.setIsAuthenticated}
-          currentUser={props.currentUser}
-          setCurrentUser={props.setCurrentUser}
-        />
-      </div>
-      <div className="data">
-        <div className="search">
-          {categories && (
-            <select id="" onChange={(e) => onChangeOption(e)}>
-              <option defaultValue="All">All Categories</option>
-              {categories.map((item, index) => {
-                return (
-                  <option key={index} value={item}>
-                    {item}
-                  </option>
-                );
-              })}
-            </select>
-          )}
-
-          <input type="search" placeholder="Search" ref={rfSearch}></input>
-          <button onClick={searchGis}>
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
+    <div className="AdminPage">
+      <div className="MainsContent">
+        <div className="headings">
+          <Header
+            active="Home"
+            isAuthenticated={props.isAuthenticated}
+            setIsAuthenticated={props.setIsAuthenticated}
+            currentUser={props.currentUser}
+            setCurrentUser={props.setCurrentUser}
+          />
         </div>
-        <div className="conten">
-          {!searchData ? (
-            <>
-              {data && (
-                <div id="s">
-                  <h2>{props.title}</h2>
 
-                  <div className="">
-                    {data.result
-                      ? data.result.map((item) => {
-                          return (
-                            <DataSection
-                              url="/api/getcategory/name"
-                              item={item}
-                            />
-                          );
-                        })
-                      : data.map((item) => {
-                          return (
-                            <DataSection
-                              url="/api/getcategory/name"
-                              item={item}
-                            />
-                          );
-                        })}
-                  </div>
-                </div>
-              )}
-            </>
-          ) : (
-            <>
-              {searchData && (
-                <div id="s">
-                  <h2>{props.title}</h2>
-
-                  <div className="">
-                    {searchData.map((item) => {
-                      return (
-                        <DataSection url="api/getcategory/name" item={item} />
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </>
-          )}
+        <div className="publishedData">
+          <div className="MainsContent">
+            <div className="InstancesPage">
+              <MapCategory category="Communication" />;
+            </div>
+          </div>
         </div>
       </div>
-      {data && (
-        <Pagination
-          scrollPages={scrollPages}
-          page={offset}
-          count={data.total}
-        />
-      )}
     </div>
   );
 }

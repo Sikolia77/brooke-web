@@ -350,7 +350,7 @@ export default function ThematicPreview(props) {
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
         />
-        <BottomPanel
+        {/* <BottomPanel
           printMap={printMap}
           body={body}
           updateBody={updateBody}
@@ -359,7 +359,7 @@ export default function ThematicPreview(props) {
           setPChartImgUrl={setPChartImgUrl}
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
-        />
+        /> */}
       </div>
       <div className="attribute">
         <PreviewData body={body} />

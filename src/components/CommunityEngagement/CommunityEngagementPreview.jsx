@@ -365,7 +365,7 @@ export default function CommunityEngagementPreview(props) {
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
         />
-        <BottomPanel
+        {/* <BottomPanel
           printMap={printMap}
           body={body}
           updateBody={updateBody}
@@ -374,7 +374,7 @@ export default function CommunityEngagementPreview(props) {
           setPChartImgUrl={setPChartImgUrl}
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
-        />
+        /> */}
       </div>
       <div className="attribute">
         <PreviewData body={body} />
