@@ -45,41 +45,43 @@ export default function Landing(props) {
       </div>
       <div className="landingnew">
         <div className="lcontainer">
-        <div className="wrap">
-          <div className="top">
-            <h1>BROOKE EAST AFRICA GIS PORTAL</h1>
-          </div>
-          <div className="about">
-            <p>
-              Brooke East Africa is a charity affliate organisation of Brooke UK
-              that protects and improves the lives of working equines, which
-              promote equine centric thriving communities and systems
-            </p>
-          </div>
-          <div className="icons">
-            <div className="depts">
-              <DataLink txt="Partners" url="/category/Partners" />
+          <div className="wrap">
+            <div className="top">
+              <h1>BROOKE EAST AFRICA GIS PORTAL</h1>
             </div>
-            <div className="depts">
-              <DataLink txt="Community Engagement" url="/category/Community" />
+            <div className="about">
+              <p>
+                Brooke East Africa is a charity affliate organisation of Brooke
+                UK that protects and improves the lives of working equines,
+                which promote equine centric thriving communities and systems
+              </p>
             </div>
-            <div className="depts">
-              <DataLink txt="Animal Health" url="/category/Health" />
-            </div>
-            <div className="depts">
-              <DataLink
-                txt="Innovation and Advocacy"
-                url="/category/Advocacy"
-              />
-            </div>
-            <div className="depts">
-              <DataLink txt="Communication" url="/category/Communication" />
+            <div className="icons">
+              <div className="depts">
+                <DataLink txt="Partners" url="/publishedpartners" />
+              </div>
+              <div className="depts">
+                <DataLink
+                  txt="Community Engagement"
+                  url="/publishedcommunity"
+                />
+              </div>
+              <div className="depts">
+                <DataLink txt="Animal Health" url="/publishedhealth" />
+              </div>
+              <div className="depts">
+                <DataLink
+                  txt="Innovation and Advocacy"
+                  url="/publishedadvocacy"
+                />
+              </div>
+              <div className="depts">
+                <DataLink txt="Communication" url="/publishedcommunications" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      
     </div>
   );
 }
