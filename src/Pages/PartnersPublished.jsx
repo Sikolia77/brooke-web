@@ -45,10 +45,10 @@ export default function PartnersPublished(props) {
         <div className="headings">
           <Header
             active="Home"
-            isAuthenticated={props.isAuthenticated}
-            setIsAuthenticated={props.setIsAuthenticated}
-            currentUser={props.currentUser}
-            setCurrentUser={props.setCurrentUser}
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
           />
         </div>
 
