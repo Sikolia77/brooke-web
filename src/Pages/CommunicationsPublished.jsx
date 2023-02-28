@@ -7,7 +7,7 @@ import DataSection from "../components/Utils/DataSection";
 import Pagination from "../components/Utils/pagination";
 import { useRef } from "react";
 
-export default function AnimalHealthPublished(props) {
+export default function CommunicationsPublished(props) {
   const [data, setData] = useState(null);
   const [categories, setCategories] = useState([]);
   const [offset, setOffset] = useState(0);
@@ -18,8 +18,7 @@ export default function AnimalHealthPublished(props) {
 
   useEffect(() => {
     console.log("all");
-
-    setUrl(`/gis/category/Communication/${offset * 12}`);
+    setUrl(`/all/${offset * 12}`);
   }, [offset]);
 
   const searchGis = () => {
@@ -65,7 +64,7 @@ export default function AnimalHealthPublished(props) {
   }
 
   useEffect(() => {
-    fetch(`/api/gis/Communication/`, {
+    fetch(`/api/gis/category/`, {
       method: "get",
       credentials: "include",
     })
@@ -90,7 +89,7 @@ export default function AnimalHealthPublished(props) {
     setOffset(0);
     setSearchData(null);
     if (e.target.value === "All Categories") {
-      setUrl(`/gis/category/Communication/${offset * 12}`);
+      setUrl(`/all/${offset * 12}`);
     } else {
       let url = `/category/${e.target.value}/${offset * 12}`;
       setUrl(url);
@@ -111,7 +110,7 @@ export default function AnimalHealthPublished(props) {
         <div className="search">
           {categories && (
             <select id="" onChange={(e) => onChangeOption(e)}>
-              <option defaultValue="All Categories">All Categories</option>
+              <option defaultValue="All">All Categories</option>
               {categories.map((item, index) => {
                 return (
                   <option key={index} value={item}>
@@ -133,6 +132,7 @@ export default function AnimalHealthPublished(props) {
               {data && (
                 <div id="s">
                   <h2>{props.title}</h2>
+
                   <div className="">
                     {data.result
                       ? data.result.map((item) => {

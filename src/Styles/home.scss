@@ -11,7 +11,7 @@
 
   .landingnew {
     font-family: "Montserrat";
-    height:88vh;
+    height: 88vh;
     width: 100vw;
     background-color: red;
 
@@ -60,6 +60,7 @@
           .depts:hover {
             cursor: pointer;
             color: orangered;
+            background-color: lightgray;
           }
         }
       }
