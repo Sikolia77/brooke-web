@@ -100,7 +100,7 @@ export default function Advocacy(props) {
         hideElementsWithSelectors: [".leaflet-control-container"],
         mimeType: "image/png",
         caption: null,
-        captionFontSize: 15,
+        captionFontSize: 10,
         captionFont: "Arial",
         captionColor: "black",
         captionBgColor: "white",
@@ -251,10 +251,10 @@ export default function Advocacy(props) {
           else throw Error("");
         })
         .then((data) => {
-          if (data.message == "User Created successfully") {
+          if (data.success == "Created successfully") {
             window.location.href = "/data";
           } else {
-            window.location.href = "/admin/newinstance";
+            window.location.href = "/admin";
           }
         })
         .catch((e) => {

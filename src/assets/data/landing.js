@@ -34,8 +34,6 @@ const myData = [
     title: "Brooke East Africa",
     subtitle: "GIS Portal",
     cat: "data",
-    p: `Brooke E.A GIS Portal is a repository for all the Geo-referenced data sets of Brooke East Africa. It displays various types of data in interactive maps overlayed on base maps.
-                `,
     label: "View Data",
     imgs: [
       { image: satellite, txt: "Advocacy & Innovation" },
@@ -49,7 +47,6 @@ const myData = [
     title: "Brooke East Africa GIS Portal",
     subtitle: "Advocacy & Innovation",
     cat: "Advocacy & Innovation",
-    p: `These types of maps portray the geographic pattern of a particular subject matter in a geographic area.`,
     label: "View Sample Maps",
     imgs: [
       { image: th1, txt: "Institutions/Collaborators" },
@@ -63,7 +60,6 @@ const myData = [
     title: "Brooke East Africa GIS Portal",
     subtitle: "Community Engagement",
     cat: "Community Engagement",
-    p: `These types of map characterized by large-scale detail and quantitative representation of landmark features.`,
     label: "View Sample Maps",
     imgs: [
       { image: tp1, txt: "CBOs & Groups" },
@@ -77,7 +73,6 @@ const myData = [
     title: "Brooke East Africa GIS Portal",
     subtitle: "Animal Health",
     cat: "Animal Health",
-    p: `Earth observation involves gathering information about the Earth through remote sensing technologies`,
     label: "View/Download Data",
     imgs: [
       { image: rs1, txt: "Farriers" },
@@ -91,7 +86,6 @@ const myData = [
     title: "Brooke East Africa GIS Portal",
     subtitle: "Communication",
     cat: "Communication",
-    p: `These types of map characterized by large-scale detail and quantitative representation of landmark features.`,
     label: "View Sample Maps",
     imgs: [
       { image: tp1, txt: "CBOs & Groups" },
@@ -105,7 +99,6 @@ const myData = [
     title: "Brooke East Africa GIS Portal",
     subtitle: "Partners",
     cat: "Partners",
-    p: `Earth observation involves gathering information about the Earth through remote sensing technologies`,
     label: "View/Download Data",
     imgs: [
       { image: rs1, txt: "Farriers" },
@@ -120,43 +113,33 @@ const myData = [
 const categoriesData = [
   {
     title: "Innovation & Advocacy",
-    subTitle: "Geographical patterns",
-    description:
-      "A thematic map is a type of map that portrays the geographic pattern of a particular subject matter in a geographic area.",
+    subTitle: "Innovation & Advocacy",
     image: thematicMap,
-    link: "/category/Advocacy Innovation",
+    link: "/publishedadvocacy",
   },
   {
     title: "Animal Health",
     subTitle: "Animal Health",
-    description:
-      "A topographic map a type of map characterized by large-scale detail and quantitative representation of relief features, usually using contour lines, but historically using a variety of methods.",
-    image: topoMap,
-    link: "/category/Health",
+    image: thematicMap,
+    link: "/publishedhealth",
   },
   {
     title: "Community Engagement",
     subTitle: "Community Engagement",
-    description:
-      "Earth observation is the gathering of information about planet Earth's physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices.",
-    image: rasterMap,
-    link: "/category/Community Engagement",
+    image: thematicMap,
+    link: "/publishedcommunity",
   },
   {
     title: "Communication",
     subTitle: "Communication",
-    description:
-      "A topographic map a type of map characterized by large-scale detail and quantitative representation of relief features, usually using contour lines, but historically using a variety of methods.",
-    image: topoMap,
-    link: "/category/Communication",
+    image: thematicMap,
+    link: "/publishedcommunication",
   },
   {
     title: "Partners",
     subTitle: "Partners",
-    description:
-      "Earth observation is the gathering of information about planet Earth's physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices.",
-    image: rasterMap,
-    link: "/category/Partners",
+    image: thematicMap,
+    link: "/publishedpartners",
   },
 ];
 
