@@ -201,15 +201,6 @@ function App() {
           <ProtectedRoute exact path="/mapdata" component={MapData} />
         )}
 
-        {/* <Route exact path="/animalhealthdata">
-          <AnimalHealthData
-            // isAuthenticated={isAuthenticated}
-            // setIsAuthenticated={setIsAuthenticated}
-            // currentUser={currentUser}
-            // setCurrentUser={setCurrentUser}
-          />
-        </Route> */}
-
         {role == "Admin" && (
           <ProtectedRoute
             exact

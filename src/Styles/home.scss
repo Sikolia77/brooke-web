@@ -17,11 +17,17 @@
 
     .lcontainer {
       background-color: #e8ecf4;
+      
       .wrap {
+        height: 80%;
         .top {
           text-align: center;
           color: $accent;
           margin: 2em;
+          h1{
+            font-size: 35px;
+            font-weight: bold;
+          }
         }
 
         .about {

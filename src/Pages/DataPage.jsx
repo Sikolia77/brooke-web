@@ -36,7 +36,6 @@ export default function DataPage(props) {
         setSearchData(data);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
 
@@ -46,6 +45,7 @@ export default function DataPage(props) {
       credentials: "include",
     })
       .then((res) => {
+        console.log(res)
         if (!res.ok) {
           throw Error("Could not fetch messages!!!");
         }

@@ -47,8 +47,10 @@
       display: grid;
       grid-template-columns: repeat(6, auto);
       gap: 10px;
-      color: white;
+      color: black;
       align-items: center;
+      font-size: 30px;
+      font-weight: bold;
 
       h4 {
         font-weight: 600;
