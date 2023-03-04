@@ -128,24 +128,7 @@ export default function Users(props) {
 
       <div className="newusercontent">
         <Navigation active="Create User" />
-        <div className="bot">
-          <div className="main">
-            <NewPortalUser />
-          </div>
-          <div className="right">
-            {data &&
-              data.map((item, index) => {
-                return (
-                  <UserActivity
-                    key={index}
-                    Name={item.Name}
-                    created={item.createdAt}
-                    updated={item.updatedAt}
-                  />
-                );
-              })}
-          </div>
-        </div>
+        <NewPortalUser />
       </div>
     </div>
   );

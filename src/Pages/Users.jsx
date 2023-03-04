@@ -47,16 +47,9 @@ export default function UsersPage(props) {
           setCurrentUser={setCurrentUser}
         />
       </div>
-
       <div className="newusercontent">
         <Navigation active="Users" />
         <div className="UsersPage">
-          <UsrStats
-            total={total}
-            active={active}
-            inactive={inactive}
-            time={time}
-          />
           <Users
             setTotal={setTotal}
             setActive={setActive}
@@ -64,7 +57,6 @@ export default function UsersPage(props) {
             setTime={setTime}
           />
         </div>
-        ;
       </div>
     </div>
   );

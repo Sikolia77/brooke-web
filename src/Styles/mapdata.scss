@@ -1,11 +1,15 @@
 .mapdata {
   @import "./variables";
+  overflow: hidden;
+  height: 100vh;
+
   .MainingsContent {
     .home {
       margin: 0 !important;
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 4fr;
+      overflow-y: scroll;
 
       .wrap {
         display: grid;

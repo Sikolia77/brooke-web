@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import Header from "../components/Utils/header";
+import Header from "../components/Utils/Header2";
 import "leaflet/dist/leaflet.css";
 import Footer from "../components/Utils/footer";
 import "../Styles/DataPage.scss";
@@ -97,7 +97,7 @@ export default function DataPage(props) {
 
   return (
     <div className="pubdata">
-      <div className="headings">
+      <div className="headings2">
         <Header
           isAuthenticated={props.isAuthenticated}
           setIsAuthenticated={props.setIsAuthenticated}

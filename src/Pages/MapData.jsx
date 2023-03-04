@@ -1,4 +1,4 @@
-import Header from "../components/Utils/header";
+import Header from "../components/Utils/Header2";
 import { useEffect, useState } from "react";
 import Maps from "../components/maps/NetworksMap";
 import "../Styles/mapdata.scss";
@@ -35,7 +35,7 @@ export default function MapData(props) {
   return (
     <div className="mapdata">
       <div className="MainingsContent">
-        <div className="headings">
+        <div className="headings2">
           <Header
             active="MapData"
             isAuthenticated={isAuthenticated}

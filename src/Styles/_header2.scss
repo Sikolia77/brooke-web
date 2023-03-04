@@ -5,12 +5,11 @@
   display: flex;
 }
 
-.headings {
-  height: 30vh;
-  width: 100%;
+.headings2 {
+  height: 12vh;
   //position: fixed;
 
-  .header {
+  .header2 {
     // padding-top: 8px;
     // padding-bottom: 8px;
     width: 100%;
@@ -19,25 +18,25 @@
     left: 0;
     z-index: 999999;
     transition: 300ms ease;
-    height: 30vh;
+    height: 12vh;
 
-    .container {
+    .container2 {
       //max-width: 85vw;
       width: 100%;
-      height: 30vh;
-      //margin: auto;
+      height: 12vh;
+      margin: auto;
       display: grid;
       //padding: 5px 0 5px 0;
       grid-template-columns: 0.5fr 2fr;
 
-      .logo {
+      .logo2 {
         width: 100%;
         cursor: pointer;
 
-        .lg {
-          max-height: 30vh;
+        .lg2 {
+          max-height: 10vh;
           height: 90%;
-          object-fit: cover;
+          object-fit: contain;
           padding: 0 0 0 1em;
           //width: 100%;
         }
@@ -46,21 +45,18 @@
       .nav {
         display: grid;
         grid-template-columns: repeat(6, auto);
-        // background-color: #030092;
         gap: 5px;
         color: black;
         align-items: center;
         //margin-top: 2em;
         padding-left: 6em;
-        height: 30vh;
+        height: 100%;
         background-image: url("../assets/imgs/header-back.png");
-        //background-position: center;
+        background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         //background-color: #fe5000;
         text-transform: uppercase;
-        
-        
 
         h4 {
           font-weight: 400;
@@ -358,7 +354,7 @@
 }
 
 .login {
-  // position: fixed;
+ // position: fixed;
   top: 0;
   left: 0;
   height: 100%;

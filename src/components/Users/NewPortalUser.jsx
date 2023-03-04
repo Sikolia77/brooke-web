@@ -104,8 +104,8 @@ export default function NewPortalUser(props) {
         })
         .then((data) => {
           setLoading(false);
-          if (data.success) {
-            setError(data.success);
+          if (data.message) {
+            setError(data.message);
             window.location.href = "/admin/users";
           } else {
             setError(data.error);
@@ -144,7 +144,7 @@ export default function NewPortalUser(props) {
         <UserInput ref={phone} type="phone" label="Phone *" />
         <div className="div2equal">
           <UserInput ref={department} type="text" label="Department *" />
-          <UserInput ref={position} type="text" label="Position *" />
+          <UserInput ref={position} type="text" label="Position *" placeholder="Position" />
         </div>
         <UserSelect
           ref={role}

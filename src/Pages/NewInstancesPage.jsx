@@ -11,7 +11,7 @@ import AnimalHealth from "../components/AnimalHealth/AnimalHealth";
 import WorldData from "../components/WorldData/WorldData";
 import BaseMap from "../components/BaseMap/BaseMap";
 import TopoMap from "../components/TopoMap/TopoMap";
-import Header from "../components/Utils/header";
+import Header from "../components/Utils/Header2";
 import Communication from "../components/Communication/Communication";
 import Partners from "../components/Partners/Partners";
 
@@ -44,7 +44,7 @@ export default function NewInstancesPage(props) {
 
   return (
     <div className="NewinstancesPage">
-      <div className="headings">
+      <div className="headings2">
         <Header
           isAuthenticated={isAuthenticated}
           setIsAuthenticated={setIsAuthenticated}
