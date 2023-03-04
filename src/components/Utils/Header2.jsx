@@ -139,7 +139,6 @@ export default function Header(props) {
 
       <div className="header2">
         <div className="container2">
-          <div></div>
           <div
             onClick={() => {
               window.location.href = "/";
