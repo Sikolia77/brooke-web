@@ -15,18 +15,7 @@ export default function PreviewData(props) {
             <span>Dataset: </span>
             {props.body.attributes.Dataset}
           </h4>
-          <h4>
-            <span>Keywords: </span>
-            {props.body.attributes.Keywords}
-          </h4>
-          <h4>
-            <span>Owner: </span>
-            {props.body.attributes.Owner}
-          </h4>
-          <h4>
-            <span>Data Type: </span>
-            {props.body.attributes.Type}
-          </h4>
+    
         </div>
         <ImageUpload
           preview={true}

@@ -1,9 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
-import Header from "../Utils/header";
-import Navigation from "../Utils/Navigation";
-import MapCategory from "../maps/MapCategory";
+import Header from "../components/Utils/header";
+import Navigation from "../components/Utils/Navigation";
+import MapCategory from "../components/maps/MapCategory2";
 
-export default function Communication(props) {
+export default function CommunicationsPublished(props) {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [currentUser, setCurrentUser] = useState();
   const [categories, setCategories] = useState(null);
@@ -45,15 +45,14 @@ export default function Communication(props) {
         <div className="headings">
           <Header
             active="Home"
-            isAuthenticated={props.isAuthenticated}
-            setIsAuthenticated={props.setIsAuthenticated}
-            currentUser={props.currentUser}
-            setCurrentUser={props.setCurrentUser}
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
           />
         </div>
 
         <div className="publishedData">
-          <Navigation active="Communication" />
           <div className="MainsContent">
             <div className="InstancesPage">
               <MapCategory category="Communication" />;

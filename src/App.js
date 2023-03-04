@@ -32,6 +32,11 @@ import CommunicationData from "./Pages/CommunicationData";
 import PartnersData from "./Pages/PartnersData";
 import AnimalHealthData from "./Pages/AnimalHealthData";
 import ProtectedRoute from "./components/login/ProtectedRoute";
+import AnimalHealthPublished from "./Pages/AnimalHealthPublished";
+import AdvocacyPublished from "./Pages/AdvocacyPublished";
+import CommunityPublished from "./Pages/CommunityPublished";
+import CommunicationsPublished from "./Pages/CommunicationsPublished";
+import PartnersPublished from "./Pages/PartnersPublished";
 
 function App() {
   useEffect(() => {
@@ -181,6 +186,51 @@ function App() {
 
         <Route exact path="/nmap">
           <Map
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+
+        <Route exact path="/publishedhealth">
+          <AnimalHealthPublished
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+
+        <Route exact path="/publishedadvocacy">
+          <AdvocacyPublished
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+
+        <Route exact path="/publishedcommunity">
+          <CommunityPublished
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+
+        <Route exact path="/publishedcommunications">
+          <CommunicationsPublished
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+
+        <Route exact path="/publishedpartners">
+          <PartnersPublished
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}
