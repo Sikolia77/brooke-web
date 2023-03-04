@@ -35,8 +35,7 @@ export default function DataPage(props) {
       .then((data) => {
         setSearchData(data);
       })
-      .catch((err) => {
-      });
+      .catch((err) => {});
   };
 
   useEffect(() => {
@@ -45,7 +44,7 @@ export default function DataPage(props) {
       credentials: "include",
     })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (!res.ok) {
           throw Error("Could not fetch messages!!!");
         }
@@ -97,7 +96,7 @@ export default function DataPage(props) {
   };
 
   return (
-    <div>
+    <div className="pubdata">
       <div className="headings">
         <Header
           isAuthenticated={props.isAuthenticated}
@@ -173,14 +172,14 @@ export default function DataPage(props) {
             </>
           )}
         </div>
+        {data && (
+          <Pagination
+            scrollPages={scrollPages}
+            page={offset}
+            count={data.total}
+          />
+        )}
       </div>
-      {data && (
-        <Pagination
-          scrollPages={scrollPages}
-          page={offset}
-          count={data.total}
-        />
-      )}
     </div>
   );
 }

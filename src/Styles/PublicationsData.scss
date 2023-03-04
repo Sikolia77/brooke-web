@@ -4,7 +4,8 @@
 
 .data {
   min-height: 100vh;
-  padding-top: 100px;
+  //padding-top: 100px;
+  background-color: #e8ecf4;
 
   .search {
     margin: 2em auto 2em auto;
@@ -24,7 +25,7 @@
       color: whitesmoke;
       font-size: 1rem;
       cursor: pointer;
-      option{
+      option {
         color: black;
       }
     }
@@ -44,13 +45,13 @@
       margin: 5px;
       cursor: pointer;
       transition: 300ms;
-      i{
+      i {
         color: whitesmoke;
         transform: scale(1.4);
         transition: 300ms ease;
       }
     }
-    button:hover i{
+    button:hover i {
       transform: scale(1.8);
     }
   }
@@ -72,16 +73,15 @@
       align-items: center;
 
       h3 {
-          cursor: pointer;
-        }
-        h3:hover {
-          color: $accent;
-        }
+        cursor: pointer;
+      }
+      h3:hover {
+        color: $accent;
+      }
 
       .publications {
         display: block;
         padding-right: 4em;
-        
 
         p {
           overflow: hidden;
@@ -93,9 +93,9 @@
           font-size: 12px;
           margin: 8px 0 8px 0;
         }
-        button{
+        button {
           color: white;
-          background-color: #001D6E;
+          background-color: #001d6e;
           padding: 10px;
           border: none;
           cursor: pointer;
@@ -116,8 +116,8 @@
         }
       }
     }
-    .dataSections:hover{
-      background: #CFD2CF;
+    .dataSections:hover {
+      background: #cfd2cf;
     }
   }
 }
