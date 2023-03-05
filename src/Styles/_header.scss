@@ -358,11 +358,11 @@
 }
 
 .login {
-  // position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 40%;
+  width: 100%;
   background-color: rgba($color: #000000, $alpha: 0.5);
   display: flex;
   align-items: center;
