@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import Header from "../../components/Utils/header";
+import Header from "../../components/Utils/Header2";
 import Navigation from "../../components/Utils/Navigation";
 import MapCategory from "../maps/MapCategory";
 
@@ -42,7 +42,7 @@ export default function Advocacy(props) {
   return (
     <div className="AdminPage">
       <div className="MainsContent">
-        <div className="headings">
+        <div className="headings2">
           <Header
             active="Admin"
             isAuthenticated={props.isAuthenticated}

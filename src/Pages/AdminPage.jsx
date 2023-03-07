@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useLocation } from "react";
-import Header from "../components/Utils/header";
+import Header from "../components/Utils/Header2";
 import UsrStats from "../components/Instances/UsrStats";
 import MapCategory from "../components/maps/MapCategory";
 import Navigation from "../components/Utils/Navigation";
@@ -78,7 +78,7 @@ export default function AdminPagePage(props) {
   return (
     <div className="AdminPage">
       <div className="MainsContent">
-        <div className="headings">
+        <div className="headings2">
           <Header
             active="Admin"
             isAuthenticated={props.isAuthenticated}
