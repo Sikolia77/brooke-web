@@ -1,9 +1,10 @@
 .maps {
   position: relative;
-  height: calc(100vh - 54px);
+  height: 100vh;
+  width: 100%;
 
   .wrapper {
-    height: 100%;
+    height: 90%;
     position: relative;
 
     .layers {
