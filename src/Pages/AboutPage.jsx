@@ -30,12 +30,6 @@ export default function AboutPage(props) {
               be the case in an analogue setup.
             </p>
           </div>
-          <div
-            className="img-hero"
-            style={{
-              backgroundImage: `url(${about2Background})`,
-            }}
-          ></div>
         </section>
         <section className="aboutPage section-3">
           <h2>GIS Portal Purpose and Functionality</h2>
