@@ -1,16 +1,69 @@
 version: "3.3"
 
 services:
-  admin:
-    container_name: admin
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    stdin_open: true
-    ports:
-      - "3003:3000"
+  brookedb:
+    container_name: brookedb
+    image: postgis/postgis:12-2.5
     environment:
-      - CHOKIDAR_USEPOLLING=true
+      - POSTGRES_DB=BROOKE_DB
+      - POSTGRES_PASSWORD=Brooke!!
+      - POSTGRES_USER=postgres
     volumes:
-      - ./:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./utdata/syspg:/var/lib/postgresql/data
+    ports:
+      - 4434:5432
+    restart: always
+    
+  geoserver:
+    container_name: brookegeoserver
+    image: oscarfonts/geoserver
+    hostname: geoserver
+    volumes:
+      - ./brookedata/geoserver_data:/var/local/geoserver
+    links:
+      - brookedb:brookedb
+    ports:
+      - "4080:8080"
+    depends_on:
+      - brookedb
+    restart: always
+
+  api:
+    container_name: brookeapi
+    image: node:slim
+    build:
+      context: ./api
+    ports:
+      - "4003:3003"
+    environment:
+      - PGUSER=postgres
+      - PGPASSWORD=Brooke!!
+      - PGDATABASE=BROOKE_DB
+      - PGHOST=brookedb
+    depends_on:
+      - brookedb
+    restart: always
+
+  web:
+    container_name: brookeweb
+    build:
+      context: ./admin
+    ports:
+      - "4000:80"
+    links:
+      - "api:api"
+    depends_on:
+      - api
+      - geoserver
+    restart: always
+
+  nginx:
+    container_name: brookenginx
+    build: .
+    ports:
+      - "4001:80"
+    depends_on:
+      - api
+      - geoserver
+    restart: always
+

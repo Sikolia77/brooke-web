@@ -44,12 +44,12 @@
 
       .nav {
         display: grid;
-        grid-template-columns: repeat(6, auto);
+        grid-template-columns: repeat(5, auto);
         gap: 5px;
         color: black;
         align-items: center;
         //margin-top: 2em;
-        padding-left: 6em;
+        padding-left: 10em;
         height: 100%;
         background-image: url("../assets/imgs/header-back.png");
         background-position: center;
