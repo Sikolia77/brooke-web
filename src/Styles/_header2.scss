@@ -45,7 +45,7 @@
       .nav {
         display: grid;
         grid-template-columns: repeat(5, auto);
-        gap: 5px;
+        gap: 2px;
         color: black;
         align-items: center;
         //margin-top: 2em;
@@ -283,7 +283,7 @@
     }
 
     .nav {
-      gap: 1em;
+      //gap: 1em;
       margin-top: auto;
       margin-bottom: auto;
       color: black;
@@ -296,7 +296,7 @@
         font-size: 14px;
         text-align: left;
         cursor: pointer;
-        margin: 1em 0 1em 0;
+        margin: 1em 1em 1em 0;
       }
 
       h4:hover {

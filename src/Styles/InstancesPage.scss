@@ -5,8 +5,8 @@
   display: grid;
   grid-template-columns: auto 1fr;
   .MainsContent {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    overflow:auto;
+    width: 100%;
     .InstancesPage {
       overflow-y: auto;
       position: relative;
