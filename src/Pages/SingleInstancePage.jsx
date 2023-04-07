@@ -1,9 +1,7 @@
 import { useRef, useEffect } from "react";
 import "../Styles/SingleInstancePage.scss";
-import ThematicPreview from "../components/Advocacy/AdvocacyPreview";
-import AnimalHealthPreview from "../components/AnimalHealth/AnimalHealthPreview";
-import CommunityEngagementPreview from "../components/CommunityEngagement/CommunityEngagementPreview"
-import Header from "../components/Utils/header";
+import DataPreview from "../components/Advocacy/AdvocacyPreview";
+import Header from "../components/Utils/Header2";
 import { useState } from "react";
 export default function SingleInstancePage(props) {
   const pathname = window.location.pathname.split("/");
@@ -34,8 +32,8 @@ export default function SingleInstancePage(props) {
 
   return (
     <div className="wrapper">
-      <div className="MainContent">
-        <div className="headings">
+      <div className="MainsContent">
+        <div className="headings2">
           <Header
             isAuthenticated={props.isAuthenticated}
             setIsAuthenticated={props.setIsAuthenticated}
@@ -47,17 +45,27 @@ export default function SingleInstancePage(props) {
           <div>
             {pathname[3] === "advocacy" && (
               <>
-                <ThematicPreview instanceId={instanceId} />
+                <DataPreview instanceId={instanceId} />
               </>
             )}
             {pathname[3] === "health" && (
               <>
-                <AnimalHealthPreview instanceId={instanceId} />
+                <DataPreview instanceId={instanceId} />
               </>
             )}
             {pathname[3] === "community" && (
               <>
-                <CommunityEngagementPreview instanceId={instanceId} />
+                <DataPreview instanceId={instanceId} />
+              </>
+            )}
+            {pathname[3] === "partners" && (
+              <>
+                <DataPreview instanceId={instanceId} />
+              </>
+            )}
+            {pathname[3] === "communication" && (
+              <>
+                <DataPreview instanceId={instanceId} />
               </>
             )}
           </div>

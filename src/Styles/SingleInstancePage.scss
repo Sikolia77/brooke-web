@@ -1,12 +1,9 @@
 @import "./0_mediaquery";
 @import "./1_variables";
 
-
-
 .SingleInstancePage {
-  overflow-y: auto;
   position: relative;
-  height: fit-content;
+  height: 100vh;
   //padding-top: 60px;
 
   .model {
@@ -114,7 +111,7 @@
     position: relative;
     box-shadow: 2px 2px 5px #60606040;
     width: 100%;
-    height: 90vh;
+    height: 100%;
 
     .error {
       h6 {
@@ -239,9 +236,12 @@
     }
 
     .sidepanel {
+
+      // transform: rotate(90deg);
+      
       .bar {
         display: grid;
-        grid-template-columns: repeat(4, auto);
+        grid-template-columns: repeat(3, auto);
         width: fit-content;
         // height: fit-content;
         // min-height: 50vh;
@@ -650,17 +650,15 @@
       text-align: center;
     }
   }
-
+  .preview {
+    height: 100vh;
+    overflow-y: auto;
+  }
   .desc {
-    padding: 1em 0 1em 0;
+    //padding: 1em 0 1em 0;
     margin: auto;
-
-    .div2equal {
-      margin-left: auto !important;
-      margin-right: auto !important;
-      max-width: 85vw;
-      width: 100%;
-    }
+    width: 100%;
+    //background-color: grey;
 
     h2 {
       font-family: "Montserrat";
@@ -685,9 +683,11 @@
     }
 
     .description {
-      * {
-        all: initial;
-      }
+      width: 100%;
+      margin: auto;
+      // * {
+      //   all: initial;
+      // }
 
       p {
         font-family: "Montserrat";
@@ -696,9 +696,8 @@
         font-size: medium;
         line-height: 1.5;
         color: #000000;
-        width: 100% !important;
         width: fit-content;
-        text-align: left;
+        text-align: center;
       }
     }
 
@@ -900,9 +899,12 @@
   }
 
   .attribute {
-    max-width: 85vw;
+    //background-color: white;
+    //max-width: 85vw;
     width: 100%;
     margin: auto;
+    //height: fit-content;
+    //padding: 1em 0 1em 0;
   }
 
   @include maxwidth(mobile) {
@@ -920,18 +922,7 @@
       }
     }
 
-    .BottomPanel {
-      left: 10% !important;
-      right: 10% !important;
-      max-width: 85vw !important;
-      width: 100% !important;
-    }
-
     .desc {
-      .div2equal {
-        grid-template-columns: repeat(1, 1fr) !important;
-      }
-
       .img {
         height: calc(100vw * 0.6) !important;
       }
@@ -958,17 +949,7 @@
       }
     }
 
-    .BottomPanel {
-      left: 10% !important;
-      right: 10% !important;
-      max-width: 85vw !important;
-      width: 100% !important;
-    }
     .desc {
-      .div2equal {
-        grid-template-columns: repeat(1, 1fr) !important;
-      }
-
       .img {
         height: calc(60vw * 0.6) !important;
       }

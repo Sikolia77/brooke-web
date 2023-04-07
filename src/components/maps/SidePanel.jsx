@@ -33,12 +33,7 @@ export default function SidePanel(props) {
             {!props.worldData && props.body.attributes.Theme !== "Topo Map" && (
               <Bar txt="Analysis" id={1} toggle={toggle} />
             )}
-
-            {/* <Bar txt="Data" id={0} toggle={toggle} />
-            <Bar txt="Analysis" id={1} toggle={toggle} />
-            <Bar txt="Layers" id={2} toggle={toggle} /> */}
-            <Bar txt="Metadata" id={3} toggle={toggle} />
-            <Bar txt="Export" id={4} toggle={toggle} />
+            <Bar txt="Info" id={3} toggle={toggle} />
           </div>
           {show && (
             <>
@@ -89,14 +84,6 @@ export default function SidePanel(props) {
                 )}
                 {showing === 3 && (
                   <Metadata body={props.body} updateBody={props.updateBody} />
-                )}
-                {showing === 4 && (
-                  <Export
-                    body={props.body}
-                    updateBody={props.updateBody}
-                    instanceId={props.instanceId}
-                    instance={props.body}
-                  />
                 )}
               </div>
               {props.body.styles?.length > 0 && styler != null && (

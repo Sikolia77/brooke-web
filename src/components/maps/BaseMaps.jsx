@@ -7,7 +7,7 @@ export default function BaseMaps(params) {
    <>
       {myData.map((item, index) => {
         let checked = true;
-        if (index !== 0) checked = false;
+        if (index !== 1) checked = false;
         return (
           <BaseLayer key={index} checked={checked} name={item.name}>
             <TileLayer attribution={item.attribution} url={item.url} />

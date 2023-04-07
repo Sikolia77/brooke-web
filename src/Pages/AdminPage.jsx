@@ -4,7 +4,7 @@ import UsrStats from "../components/Instances/UsrStats";
 import MapCategory from "../components/maps/MapCategory";
 import Navigation from "../components/Utils/Navigation";
 
-export default function AdminPagePage(props) {
+export default function AdminPage(props) {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [currentUser, setCurrentUser] = useState();
   const [categories, setCategories] = useState(null);
