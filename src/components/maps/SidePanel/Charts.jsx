@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import * as htmlToImage from "html-to-image";
 
 export default function Charts(props) {
-  const [showBarChart, setShowBarChart] = useState(false);
+  const [showBarChart, setShowBarChart] = useState(true);
     const [reload, setReload] = useState(false);
   const piechrt = useRef(null);
   const barchrt = useRef(null);

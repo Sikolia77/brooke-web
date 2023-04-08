@@ -235,6 +235,14 @@
       }
     }
 
+     .styleicons {
+          //max-height: 1vh;
+          height: 5vh;
+          object-fit: cover;
+          padding: 10px 0 0 1em;
+          //width: 100%;
+        }
+
     .sidepanel {
 
       // transform: rotate(90deg);
@@ -249,6 +257,558 @@
         background-color: rgba($color: white, $alpha: 0.9);
         left: 0;
         top: 0;
+        // height: fit-content;
+        z-index: 9999;
+
+        h4 {
+          color: $primary;
+          font-weight: 400;
+          height: fit-content;
+          text-align: center;
+          font-size: small;
+          line-height: 18px;
+          padding: 1em 5px 1em 5px;
+          // writing-mode: vertical-rl;
+          cursor: pointer;
+        }
+
+        h4:hover {
+          color: $dark;
+        }
+      }
+
+      .Popup {
+        position: absolute;
+        left: 0;
+        top: 6.5vh;
+        min-height: 50vh;
+        height: fit-content;
+        z-index: 99999;
+        width: 35vw;
+        background-color: rgba($color: white, $alpha: 0.8);
+        border-radius: 0 8px 8px 0;
+        padding: 10px;
+        overflow-y: auto;
+
+        .layers {
+          min-height: 20vh;
+          padding: 1em;
+        }
+
+        p {
+          text-align: center;
+          font-size: 10pt;
+          padding: 0 0 5px 0;
+          color: $primary;
+        }
+
+        h5 {
+          color: $dark;
+          padding: 10px 0 5px 0;
+        }
+
+        i {
+          color: $dark;
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          cursor: pointer;
+        }
+        i:hover {
+          color: $accent;
+        }
+
+        .list {
+          overflow-y: auto;
+          max-height: 35vh;
+        }
+
+        .lyr {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 8px 0 8px 0;
+
+          input {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .div {
+            height: 24px;
+            width: 24px;
+            background-color: gray;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+
+        .classes {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          .cb {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+        .range {
+          display: grid;
+          grid-template-columns: auto auto 1fr 1fr 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          i {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px !important;
+            width: 24px !important;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+
+          input {
+            width: 100% !important;
+          }
+        }
+        @include maxwidth(mobile) {
+          top: 10vw !important;
+          width: 86vw !important;
+        }
+      }
+      @include maxwidth(mobile) {
+        .bar {
+          width: 86vw !important;
+        }
+      }
+    }
+
+    .stylingicon {
+
+      // transform: rotate(90deg);
+      
+      .bar {
+        
+        width: fit-content;
+        // height: fit-content;
+        // min-height: 50vh;
+        position: absolute;
+        //background-color: rgba($color: white, $alpha: 0.9);
+        left: 0;
+        top: 0;
+        // height: fit-content;
+        z-index: 9999;
+
+        h4 {
+          color: $primary;
+          font-weight: 400;
+          height: fit-content;
+          text-align: center;
+          font-size: small;
+          line-height: 18px;
+          padding: 1em 5px 1em 5px;
+          // writing-mode: vertical-rl;
+          cursor: pointer;
+        }
+
+        h4:hover {
+          color: $dark;
+        }
+      }
+
+      .Popup {
+        position: absolute;
+        left: 0;
+        top: 6.5vh;
+        min-height: 50vh;
+        height: fit-content;
+        z-index: 99999;
+        width: 35vw;
+        background-color: rgba($color: white, $alpha: 0.8);
+        border-radius: 0 8px 8px 0;
+        padding: 10px;
+        overflow-y: auto;
+
+        .layers {
+          min-height: 20vh;
+          padding: 1em;
+        }
+
+        p {
+          text-align: center;
+          font-size: 10pt;
+          padding: 0 0 5px 0;
+          color: $primary;
+        }
+
+        h5 {
+          color: $dark;
+          padding: 10px 0 5px 0;
+        }
+
+        i {
+          color: $dark;
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          cursor: pointer;
+        }
+        i:hover {
+          color: $accent;
+        }
+
+        .list {
+          overflow-y: auto;
+          max-height: 35vh;
+        }
+
+        .lyr {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 8px 0 8px 0;
+
+          input {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .div {
+            height: 24px;
+            width: 24px;
+            background-color: gray;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+
+        .classes {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          .cb {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+        .range {
+          display: grid;
+          grid-template-columns: auto auto 1fr 1fr 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          i {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px !important;
+            width: 24px !important;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+
+          input {
+            width: 100% !important;
+          }
+        }
+        @include maxwidth(mobile) {
+          top: 10vw !important;
+          width: 86vw !important;
+        }
+      }
+      @include maxwidth(mobile) {
+        .bar {
+          width: 86vw !important;
+        }
+      }
+    }
+
+    .analysisicon {
+
+      // transform: rotate(90deg);
+      
+      .bar {
+        
+        width: fit-content;
+        // height: fit-content;
+        // min-height: 50vh;
+        position: absolute;
+        //background-color: rgba($color: white, $alpha: 0.9);
+        left: 0;
+        top: 3em;
+        // height: fit-content;
+        z-index: 9999;
+
+        h4 {
+          color: $primary;
+          font-weight: 400;
+          height: fit-content;
+          text-align: center;
+          font-size: small;
+          line-height: 18px;
+          padding: 1em 5px 1em 5px;
+          // writing-mode: vertical-rl;
+          cursor: pointer;
+        }
+
+        h4:hover {
+          color: $dark;
+        }
+      }
+
+      .Popup {
+        position: absolute;
+        left: 0;
+        top: 6.5vh;
+        min-height: 50vh;
+        height: fit-content;
+        z-index: 99999;
+        width: 35vw;
+        background-color: rgba($color: white, $alpha: 0.8);
+        border-radius: 0 8px 8px 0;
+        padding: 10px;
+        overflow-y: auto;
+
+        .layers {
+          min-height: 20vh;
+          padding: 1em;
+        }
+
+        p {
+          text-align: center;
+          font-size: 10pt;
+          padding: 0 0 5px 0;
+          color: $primary;
+        }
+
+        h5 {
+          color: $dark;
+          padding: 10px 0 5px 0;
+        }
+
+        i {
+          color: $dark;
+          display: block;
+          width: fit-content;
+          margin-left: auto;
+          cursor: pointer;
+        }
+        i:hover {
+          color: $accent;
+        }
+
+        .list {
+          overflow-y: auto;
+          max-height: 35vh;
+        }
+
+        .lyr {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 8px 0 8px 0;
+
+          input {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .div {
+            height: 24px;
+            width: 24px;
+            background-color: gray;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+
+        .classes {
+          display: grid;
+          grid-template-columns: auto auto 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          .cb {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+        }
+        .range {
+          display: grid;
+          grid-template-columns: auto auto 1fr 1fr 1fr;
+          gap: 8px;
+          color: $dark;
+          margin: 4px 0 4px 1.5em;
+
+          i {
+            height: 16px;
+            width: 16px;
+            margin: 4px 0 4px 0;
+          }
+
+          .cr {
+            height: 24px !important;
+            width: 24px !important;
+            cursor: pointer;
+            border-radius: 3px;
+            border: none;
+            outline: none;
+          }
+
+          p {
+            line-height: 24px;
+            color: $dark;
+            text-align: left !important;
+            text-transform: capitalize;
+          }
+
+          input {
+            width: 100% !important;
+          }
+        }
+        @include maxwidth(mobile) {
+          top: 10vw !important;
+          width: 86vw !important;
+        }
+      }
+      @include maxwidth(mobile) {
+        .bar {
+          width: 86vw !important;
+        }
+      }
+    }
+
+    .infoicon {
+
+      // transform: rotate(90deg);
+      
+      .bar {
+        
+        width: fit-content;
+        // height: fit-content;
+        // min-height: 50vh;
+        position: absolute;
+        //background-color: rgba($color: white, $alpha: 0.9);
+        left: 0;
+        top: 6em;
         // height: fit-content;
         z-index: 9999;
 

@@ -18,6 +18,9 @@ import BaseMaps from "../maps/BaseMaps";
 import "leaflet";
 import "leaflet-simple-map-screenshoter";
 import PreviewData from "../maps/PreviewData";
+import StyleMap from "../maps/StylingTools";
+import AnalysisTools from "../maps/AnalysisTools";
+import InfoTools from "../maps/InfoTools";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -242,7 +245,8 @@ export default function AdvocacyPreview(props) {
           <ZoomControl position="topright" />
         </MapContainer>
 
-        <SidePanel
+        
+        <StyleMap
           update={false}
           body={body}
           updateBody={updateBody}
@@ -253,6 +257,31 @@ export default function AdvocacyPreview(props) {
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
         />
+
+        <AnalysisTools
+          update={false}
+          body={body}
+          updateBody={updateBody}
+          instanceId={props.instanceId}
+          instance={props.body}
+          pChartImgUrl={pChartImgUrl}
+          setPChartImgUrl={setPChartImgUrl}
+          bChartImgUrl={bChartImgUrl}
+          setBChartImgUrl={setBChartImgUrl}
+        />
+
+        <InfoTools
+          update={false}
+          body={body}
+          updateBody={updateBody}
+          instanceId={props.instanceId}
+          instance={props.body}
+          pChartImgUrl={pChartImgUrl}
+          setPChartImgUrl={setPChartImgUrl}
+          bChartImgUrl={bChartImgUrl}
+          setBChartImgUrl={setBChartImgUrl}
+        />
+
       </div>
       {msg && <AlertMsg msg={msg} setMsg={setMsg} />}
     </div>
