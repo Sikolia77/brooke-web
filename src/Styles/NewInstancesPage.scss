@@ -2,18 +2,21 @@
 @import "./1_variables";
 
 .NewinstancesPage {
-  height: 100vh;
-
+  height: 100vh !important;
+  overflow-y: hidden;
+  width: 100%;
+  
   .newData {
     display: grid;
     grid-template-columns: auto 3fr;
+    height: 100%;
 
     .dataSection {
       //overflow-y: auto;
       height: 100%;
       width: 100%;
-      margin: auto;
       background-color: rgba($color: #000000, $alpha: 0.5);
+      padding-bottom: 4em;
 
       .model22 {
         //position: relative;
@@ -656,7 +659,7 @@
         }
 
         .divequal {
-          .thumb{
+          .thumb {
             padding-bottom: 2em;
           }
         }
