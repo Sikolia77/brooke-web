@@ -3,7 +3,7 @@ import Charts from "./SidePanel/Charts";
 import Export from "./SidePanel/Export";
 import Layers from "./SidePanel/Layers";
 import Metadata from "./SidePanel/Metadata";
-import Bar from "./SidePanel/Others/Bar";
+import Bar from "./SidePanel/Others/Bar2";
 import MyStyler from "./SidePanel/Topo/MyStyler";
 import Styles from "./SidePanel/Topo/Styles";
 import Data from "./SidePanel/Data";
