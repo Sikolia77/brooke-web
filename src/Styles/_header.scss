@@ -45,7 +45,7 @@
 
       .nav {
         display: grid;
-        grid-template-columns: repeat(6, auto);
+        grid-template-columns: repeat(7, auto);
         // background-color: #030092;
         gap: 5px;
         color: black;
@@ -59,8 +59,6 @@
         background-size: cover;
         //background-color: #fe5000;
         text-transform: uppercase;
-        
-        
 
         h4 {
           font-weight: 400;

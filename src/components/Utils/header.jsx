@@ -152,6 +152,7 @@ export default function Header(props) {
             <NavLink className="navlink" txt="Home" url="/" />
             <NavLink txt="Maps" url="/data" />
             {role == "Admin" && <NavLink txt="Data" url="/animalhealthdata" />}
+            <NavLink txt="Monitoring" url="/monitoring" />
             <NavLink txt="About" url="/about" />
             <div
               className="nav2"

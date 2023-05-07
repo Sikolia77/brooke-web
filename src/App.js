@@ -37,6 +37,7 @@ import AdvocacyPublished from "./Pages/AdvocacyPublished";
 import CommunityPublished from "./Pages/CommunityPublished";
 import CommunicationsPublished from "./Pages/CommunicationsPublished";
 import PartnersPublished from "./Pages/PartnersPublished";
+import Monitoring from "./Pages/Monitoring";
 
 function App() {
   useEffect(() => {
@@ -372,6 +373,14 @@ function App() {
         </Route>
         <Route exact path="/communication">
           <Communication
+            isAuthenticated={isAuthenticated}
+            setIsAuthenticated={setIsAuthenticated}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+          />
+        </Route>
+        <Route exact path="/monitoring">
+          <Monitoring
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}

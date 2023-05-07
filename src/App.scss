@@ -329,6 +329,38 @@ body {
       background-color: $dark;
     }
   }
+  .pg_container {
+    width: fit-content;
+    margin: 0 0 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+
+    .fa-arrow-right,
+    .fa-arrow-left {
+      font-size: small;
+      background-color: $accent;
+      color: white;
+      cursor: pointer;
+      height: fit-content;
+      margin: auto;
+      display: block;
+      padding: 4px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 5px #60606030;
+    }
+
+    .fa:hover {
+      background-color: $primary;
+    }
+
+    p {
+      font-size: medium;
+      height: fit-content;
+      display: block;
+      margin: auto;
+    }
+  }
 }
 
 .div2equal {

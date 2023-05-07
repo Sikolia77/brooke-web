@@ -1,0 +1,516 @@
+@import "./0_mediaquery";
+@import "./1_variables";
+
+.data {
+  height: 100%;
+  overflow-y: auto;
+  width: 100%;
+  padding: 1em;
+  position: relative;
+
+  .list {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1em;
+    min-height: 100%;
+    height: fit-content;
+
+    .downloads{
+      position: absolute;
+      bottom: 125px;
+      left: 40px;
+      z-index: 9999;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      a {
+        width: fit-content;
+        color: white;
+        background-color: #5889c2;
+        margin: 0 0 0 5px;
+        display: block;
+        padding: 3px 10px 3px 10px;
+        font-size: small;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      a:hover {
+        background-color: #217de6;
+      }
+
+      i {
+        margin-right: 5px;
+        font-size: smaller;
+      }
+
+      @include maxwidth(mobile) {
+        right: 54px !important;
+      }
+
+      @include maxwidth(tablet) {
+        right: 54px !important;
+      }
+    }
+
+    h5 {
+      font-size: medium;
+      color: $primary;
+      margin-bottom: 5px;
+    }
+
+    h6 {
+      font-size: medium;
+      color: $accent;
+      margin: 5px;
+      text-align: center;
+    }
+
+    .select {
+      label {
+        display: block;
+        margin: 10px 0 10px 0;
+        font-size: medium;
+      }
+
+      select {
+        margin: 0px 0 10px 0;
+        padding: 10px;
+        width: 100%;
+        background-color: #60606030;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        border-bottom: 2px solid #60606070;
+      }
+      select:focus {
+        border-bottom: 2px solid $primary;
+      }
+    }
+
+    .input {
+      label {
+        display: block;
+        margin: 10px 0 10px 0;
+        font-size: medium;
+      }
+
+      input {
+        margin: 0px 0 10px 0;
+        padding: 10px;
+        width: 100%;
+        background-color: #60606030;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        border-bottom: 2px solid #60606070;
+      }
+      input:focus {
+        border-bottom: 2px solid $primary;
+      }
+      textarea {
+        margin: 0px 0 10px 0;
+        padding: 10px;
+        width: 100%;
+        background-color: #60606030;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        outline: none;
+        border-bottom: 2px solid #60606070;
+      }
+      textarea:focus {
+        border-bottom: 2px solid $primary;
+      }
+    }
+    button {
+      display: block;
+      margin: 1em auto 1em auto;
+      padding: 12px;
+      width: 80%;
+      background-color: $primary;
+      color: white;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      border-bottom: 2px solid #60606070;
+      border-top: 2px solid #60606070;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba($color: $primary, $alpha: 0.8);
+    }
+    h3 {
+      padding: 10px 0 10px 0;
+      font-size: medium;
+    }
+
+    hr {
+      margin-bottom: 10px;
+    }
+
+    .head,
+    .row {
+      display: grid;
+      gap: 1px;
+    }
+
+    .row {
+      cursor: pointer;
+      margin-bottom: 2px;
+    }
+    .row:hover {
+      box-shadow: 1px 1px 5px #60606020;
+    }
+
+    h4 {
+      font-size: medium;
+      color: $primary;
+      background-color: #60606020;
+      border-radius: 2px;
+      padding: 5px;
+    }
+    p {
+      font-size: medium;
+      border-radius: 2px;
+      padding: 7px 5px 7px 5px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+
+  .monitoringpopup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    align-items: center;
+    z-index: 999999;
+    animation: zoom 1s ease;
+
+    .container {
+      background-color: white;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 0 auto 0 auto;
+      color: #000000;
+      max-width: 70vw;
+      max-height: 70vh;
+      height: fit-content;
+      overflow-y: auto;
+      width: 100%;
+      position: relative;
+
+      .bar {
+        background-color: $accent;
+        color: white;
+        padding: 0 !important;
+
+        p {
+          text-align: center;
+          margin: 0 !important;
+          cursor: pointer;
+        }
+
+        .active {
+          background-color: wheat;
+          color: $accent;
+        }
+
+        p:hover {
+          background-color: wheat;
+          color: $accent;
+        }
+
+        @include maxwidth(mobile) {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+        @include maxwidth(tablet) {
+          grid-template-columns: repeat(3, 1fr) !important;
+        }
+      }
+
+      .content {
+        position: relative;
+        min-height: 30vh;
+
+        .tally {
+          position: absolute;
+          top: 5px;
+          right: 0;
+
+          .active {
+            background-color: #74465c;
+          }
+
+          p {
+            background-color: $accent;
+            border-radius: 2px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            color: white;
+          }
+          p:hover {
+            background-color: #74465c;
+          }
+        }
+
+        @include maxwidth(mobile) {
+          display: block !important;
+
+          p {
+            word-wrap: break-word !important;
+          }
+        }
+        @include maxwidth(tablet) {
+          display: block !important;
+          p {
+            word-wrap: break-word !important;
+          }
+        }
+      }
+
+      h3 {
+        text-align: center;
+        font-size: x-large !important;
+      }
+
+      .fa-times {
+        position: absolute;
+        right: 1em;
+        top: 10px;
+        padding: 10px;
+        cursor: pointer;
+        color: $primary;
+      }
+      .fa-times:hover {
+        color: $accent;
+      }
+
+      hr {
+        margin-bottom: 10px;
+      }
+
+      i {
+        display: block;
+        width: fit-content;
+        padding: 5px;
+        margin: 0 0 0 auto;
+        color: $accent;
+      }
+      i:hover {
+        color: $primary;
+      }
+
+      h3 {
+        padding: 0px 0 10px 0;
+        font-size: medium;
+      }
+
+      form {
+        textarea {
+          resize: none;
+          width: 100%;
+          margin: auto;
+          padding: 4px;
+          font-size: 18px;
+        }
+      }
+
+      .input-map {
+        margin: 10px 0 10px 0;
+
+        h4 {
+          display: block;
+          margin: 10px 0 10px 0;
+          font-weight: 400;
+        }
+        textarea {
+          margin: 0px 0 10px 0;
+          padding: 10px;
+          width: 100%;
+          background-color: #60606030;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          outline: none;
+          border-bottom: 2px solid #60606070;
+        }
+        textarea:focus {
+          border-bottom: 2px solid $primary;
+        }
+        input {
+          margin: 0px 0 10px 0;
+          padding: 10px;
+          width: 100%;
+          background-color: #60606030;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          outline: none;
+          border-bottom: 2px solid #60606070;
+        }
+        input:focus {
+          border-bottom: 2px solid $primary;
+        }
+      }
+      .usrselect {
+        margin: 10px 0 10px 0;
+
+        h4 {
+          display: block;
+          margin: 10px 0 10px 0;
+          font-weight: 400;
+        }
+
+        select {
+          margin: 0px 0 10px 0;
+          padding: 10px;
+          width: 100%;
+          background-color: #60606030;
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          outline: none;
+          border-bottom: 2px solid #60606070;
+        }
+        input:focus {
+          border-bottom: 2px solid $primary;
+        }
+      }
+
+      p {
+        font-size: medium;
+        margin: 0px 0 5px 0;
+
+        b {
+          color: #74465c;
+          cursor: pointer;
+        }
+      }
+
+      button {
+        display: block;
+        margin: 1em auto 1em auto;
+        padding: 12px;
+        width: 80%;
+        background-color: $primary;
+        color: white;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 2px solid #60606070;
+        border-top: 2px solid #60606070;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgba($color: $primary, $alpha: 0.8);
+      }
+    }
+    @include maxwidth(mobile) {
+      .container {
+        max-width: 85% !important;
+      }
+    }
+    @include maxwidth(tablet) {
+      .container {
+        max-width: 85% !important;
+      }
+    }
+
+    .dets {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      .fa {
+        color: $accent;
+        height: fit-content;
+        margin: auto;
+        padding: 5px;
+      }
+      .fa:hover {
+        color: $primary;
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+
+    hr {
+      margin-bottom: 10px;
+    }
+  }
+
+  .editdata {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    .cont {
+      background-color: white;
+      border: 1px solid #60606030;
+      box-shadow: 2px 2px 10px #60606030;
+      border-radius: 8px;
+      padding: 1em;
+      max-width: 80%;
+      width: 100%;
+      margin: auto;
+      height: fit-content;
+      max-height: 80vh;
+      overflow: auto;
+    }
+
+    .dets {
+      display: grid;
+      grid-template-columns: 1fr auto;
+
+      .fa {
+        color: $accent;
+        height: fit-content;
+        margin: auto;
+        padding: 5px;
+      }
+      .fa:hover {
+        color: $primary;
+      }
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+
+    hr {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}

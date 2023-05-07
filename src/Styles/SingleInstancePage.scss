@@ -3,7 +3,8 @@
 
 .SingleInstancePage {
   position: relative;
-  height: 100vh;
+  height: 100%;
+  overflow-y: hidden;
   //padding-top: 60px;
 
   .model {

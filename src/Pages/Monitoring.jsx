@@ -2,9 +2,10 @@ import Header from "../components/Utils/Header2";
 import { useEffect, useState } from "react";
 import Maps from "../components/maps/NetworksMap";
 import "../Styles/mapdata.scss";
-import Navigation from "../components/Utils/Navigation2";
+import Navigation from "../components/Utils/Navigation3";
+import MonitoringData from "../components/Monitoring/MonitoringData";
 
-export default function AnimalHealthData(props) {
+export default function Monitoring(props) {
   const [active, setActive] = useState(null);
   const [data, setData] = useState(null);
   const [currentUser, setCurrentUser] = useState();
@@ -37,7 +38,7 @@ export default function AnimalHealthData(props) {
       <div className="MainingsContent">
         <div className="headings2">
           <Header
-            active="MapData"
+            active="Monitoring"
             isAuthenticated={isAuthenticated}
             setIsAuthenticated={setIsAuthenticated}
             currentUser={currentUser}
@@ -45,8 +46,12 @@ export default function AnimalHealthData(props) {
           />
         </div>
         <div className="home ">
-          <Navigation active="Animal Health" />
-          <Maps url="AnimalHealth" />
+          <Navigation active="Monitoring" />
+          <MonitoringData
+            active="Agrovets"
+            url="/api/agrovets/monitoring/all"
+            title="Agrovets"
+          />
         </div>
       </div>
     </div>
