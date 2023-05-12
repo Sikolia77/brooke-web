@@ -87,7 +87,6 @@ export default function AdminPage(props) {
             setCurrentUser={setCurrentUser}
           />
         </div>
-
         <div className="publishedData">
           <Navigation active="Summary" />
           <div className="MainsContent">

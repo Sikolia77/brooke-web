@@ -1,8 +1,11 @@
 .AboutPage {
-
+  height: 100vh;
+  overflow-y: hidden;
 
   .aboutSections {
     background-color: #e8ecf4;
+    height: 100%;
+    overflow-y: auto;
 
     .aboutPage {
       &.section-1 {
@@ -17,7 +20,6 @@
           flex-direction: column;
           width: 100%;
           height: 100%;
-        
 
           p {
             font-size: medium;
@@ -83,7 +85,6 @@
             }
           }
         }
-       
       }
 
       &.section-3 {

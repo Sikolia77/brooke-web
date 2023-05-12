@@ -10,8 +10,8 @@ import Data from "./SidePanel/Data";
 import DataTopo from "./SidePanel/DataTopo";
 import analysisicon from "../../assets/imgs/analysis.png"
 export default function AnalysisTools(props) {
-  const [show, setShow] = useState(false);
-  const [showing, setShowing] = useState(0);
+  const [show, setShow] = useState(true);
+  const [showing, setShowing] = useState(1);
   const [styler, setStyler] = useState(null);
 
   const openStyler = (value) => {

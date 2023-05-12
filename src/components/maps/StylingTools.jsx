@@ -10,8 +10,8 @@ import Data from "./SidePanel/Data";
 import DataTopo from "./SidePanel/DataTopo";
 import stylingicon from "../../assets/imgs/styling.png";
 export default function StyleMap(props) {
-  const [show, setShow] = useState(false);
-  const [showing, setShowing] = useState(0);
+  const [show, setShow] = useState(true);
+  const [showing, setShowing] = useState(1);
   const [styler, setStyler] = useState(null);
 
   const openStyler = (value) => {

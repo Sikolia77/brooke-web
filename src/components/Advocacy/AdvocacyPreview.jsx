@@ -73,7 +73,6 @@ export default function AdvocacyPreview(props) {
     }
   }, [bounds]);
 
-
   useEffect(() => {
     fetch(`/api/gis/${pathname}`, {
       method: "get",
@@ -157,7 +156,7 @@ export default function AdvocacyPreview(props) {
             fillOpacity: 0.8,
             color: body.style.classes[pos].color,
             weight: 1,
-            radius: 5,
+            radius: 8,
           };
         }
       }
@@ -172,7 +171,7 @@ export default function AdvocacyPreview(props) {
             fillOpacity: 0.8,
             color: item.color,
             weight: 1,
-            radius: 5,
+            radius: 8,
           };
         }
       });
@@ -203,7 +202,6 @@ export default function AdvocacyPreview(props) {
     }
     setBody({ ...body, bd });
   };
-
 
   return (
     <div className="preview">
@@ -245,7 +243,6 @@ export default function AdvocacyPreview(props) {
           <ZoomControl position="topright" />
         </MapContainer>
 
-        
         <StyleMap
           update={false}
           body={body}
@@ -259,7 +256,7 @@ export default function AdvocacyPreview(props) {
         />
 
         <AnalysisTools
-          update={false}
+          update={true}
           body={body}
           updateBody={updateBody}
           instanceId={props.instanceId}
@@ -281,7 +278,6 @@ export default function AdvocacyPreview(props) {
           bChartImgUrl={bChartImgUrl}
           setBChartImgUrl={setBChartImgUrl}
         />
-
       </div>
       {msg && <AlertMsg msg={msg} setMsg={setMsg} />}
     </div>
