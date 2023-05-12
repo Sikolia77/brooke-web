@@ -47,8 +47,6 @@ export default function Header(props) {
   const [clicked, setClicked] = useState(false);
   const [toggleLogin, setToggleLogin] = useState(false);
   const [toggleRegister, setToggleRegister] = useState(false);
-  // const [isAuthenticated, setIsAuthenticated] = useState(true);
-  //const [currentUser, setCurrentUser] = useState();
   const [showSettings, setShowSettings] = useState(false);
   const [toggleAccount, setToggleAccount] = useState(false);
   const [toggleEditDetails, setToggleEditDetails] = useState(false);
@@ -63,7 +61,7 @@ export default function Header(props) {
   var jwt = require("jsonwebtoken");
 
   useEffect(() => {
-    const token = localStorage.getItem("cilbup_ksa");
+    const token = localStorage.getItem("token");
 
     if (token) {
       var decoded = jwt.decode(token);

@@ -1,13 +1,10 @@
 import Header from "../components/Utils/Header2";
 import { useEffect, useState } from "react";
-import Maps from "../components/maps/NetworksMap";
 import "../Styles/mapdata.scss";
 import Navigation from "../components/Utils/Navigation3";
 import MonitoringData from "../components/Monitoring/MonitoringData";
 
 export default function Monitoring(props) {
-  const [active, setActive] = useState(null);
-  const [data, setData] = useState(null);
   const [currentUser, setCurrentUser] = useState();
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 

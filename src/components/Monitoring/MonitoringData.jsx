@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Pagination from "../../components/Utils/MonitoringPagination";
 import WaveLoading from "../../components/Utils/WaveLoading";
-import Button from "../../components/Utils/ButtonMain";
-import Input from "../../components/Utils/Input2";
 import { isMobile } from "react-device-detect";
 
 export default function Data(props) {
